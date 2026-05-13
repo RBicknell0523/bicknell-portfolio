@@ -5,166 +5,191 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import logo from "../../../public/images/logo/logo.svg";
-import DropDown from "./DropDown";
 import menuData from "./menuData";
+import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { Menu, ChevronDown } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
 
 const Header = () => {
-  const [navigationOpen, setNavigationOpen] = useState(false);
   const [stickyMenu, setStickyMenu] = useState(false);
-
+  const [openSubmenu, setOpenSubmenu] = useState<number | null>(null);
   const { data: session } = useSession();
-
   const pathUrl = usePathname();
 
-  // Sticky menu
-  const handleStickyMenu = () => {
-    if (window.scrollY >= 80) {
-      setStickyMenu(true);
-    } else {
-      setStickyMenu(false);
-    }
-  };
-
   useEffect(() => {
-    window.addEventListener("scroll", handleStickyMenu);
-  });
+    const handleScroll = () => setStickyMenu(window.scrollY >= 80);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <>
-      <header
-        className={`fixed left-0 top-0 z-1000 w-full ${
-          stickyMenu
-            ? "before:features-row-border bg-dark/70 py-4! shadow-sm backdrop-blur-lg transition duration-100 before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-full lg:py-0!"
-            : "py-7 lg:py-0"
-        }`}
-      >
-        <div className="relative mx-auto max-w-[1170px] items-center justify-between px-4 sm:px-8 lg:flex xl:px-0">
-          <div className="flex w-full items-center justify-between lg:w-1/4">
-            <Link href="/">
-              <Image src={logo} alt="Logo" width={164} height={36} />
-            </Link>
+    <header
+      className={`fixed left-0 top-0 z-1000 w-full transition-all duration-200 ${
+        stickyMenu
+          ? "border-b border-border bg-background/80 py-3 shadow-sm backdrop-blur-lg"
+          : "bg-transparent py-5"
+      }`}
+    >
+      <div className="mx-auto flex max-w-[1170px] items-center justify-between px-4 sm:px-8 xl:px-0">
+        {/* Logo */}
+        <Link href="/">
+          <Image src={logo} alt="Logo" width={140} height={32} />
+        </Link>
 
-            <button
-              onClick={() => setNavigationOpen(!navigationOpen)}
-              className="block lg:hidden"
-            >
-              <span className="relative block h-5.5 w-5.5 cursor-pointer">
-                <span className="du-block absolute right-0 h-full w-full">
-                  <span
-                    className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-white delay-0 duration-200 ease-in-out ${
-                      !navigationOpen ? "w-full! delay-300" : "w-0"
-                    }`}
-                  ></span>
-                  <span
-                    className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-white delay-150 duration-200 ease-in-out ${
-                      !navigationOpen ? "delay-400 w-full!" : "w-0"
-                    }`}
-                  ></span>
-                  <span
-                    className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-white delay-200 duration-200 ease-in-out ${
-                      !navigationOpen ? "w-full! delay-500" : "w-0"
-                    }`}
-                  ></span>
-                </span>
-                <span className="du-block absolute right-0 h-full w-full rotate-45">
-                  <span
-                    className={`absolute left-2.5 top-0 block h-full w-0.5 rounded-sm bg-white delay-300 duration-200 ease-in-out ${
-                      !navigationOpen ? "h-0! delay-0" : "h-full"
-                    }`}
-                  ></span>
-                  <span
-                    className={`delay-400 absolute left-0 top-2.5 block h-0.5 w-full rounded-sm bg-white duration-200 ease-in-out ${
-                      !navigationOpen ? "h-0! delay-200" : "h-0.5"
-                    }`}
-                  ></span>
-                </span>
-              </span>
-            </button>
-          </div>
+        {/* Desktop nav */}
+        <nav className="hidden items-center gap-1 lg:flex">
+          {menuData.map((menuItem) =>
+            menuItem.submenu ? (
+              <div key={menuItem.id} className="group relative">
+                <button
+                  className={`flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground ${
+                    pathUrl === menuItem.path
+                      ? "text-primary"
+                      : "text-foreground/70"
+                  }`}
+                >
+                  {menuItem.title}
+                  <ChevronDown className="h-3 w-3 transition-transform group-hover:rotate-180" />
+                </button>
+                <div className="invisible absolute left-0 top-full z-50 mt-1 min-w-[200px] rounded-lg border border-border bg-card p-1 opacity-0 shadow-lg transition-all group-hover:visible group-hover:opacity-100">
+                  {menuItem.submenu.map((item) => (
+                    <Link
+                      key={item.id}
+                      href={item.path || "#"}
+                      className="block rounded-md px-3 py-2 text-sm text-foreground/70 transition-colors hover:bg-accent hover:text-foreground"
+                    >
+                      {item.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <Link
+                key={menuItem.id}
+                href={menuItem.path ?? "#"}
+                className={`rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground ${
+                  pathUrl === menuItem.path
+                    ? "text-primary"
+                    : "text-foreground/70"
+                }`}
+              >
+                {menuItem.title}
+              </Link>
+            ),
+          )}
+        </nav>
 
-          <div
-            className={`invisible h-0 w-full items-center justify-between lg:visible lg:flex lg:h-auto lg:w-3/4 ${
-              navigationOpen
-                ? "visible! relative mt-4 h-auto! max-h-[400px] overflow-y-scroll rounded-md bg-dark p-7.5 shadow-lg"
-                : ""
-            }`}
-          >
-            <nav>
-              <ul className="flex flex-col gap-5 lg:flex-row lg:items-center lg:gap-2">
-                {menuData.map((menuItem, key) => (
-                  <li
-                    key={key}
-                    className={`nav__menu group relative ${
-                      stickyMenu ? "lg:py-4" : "lg:py-7"
+        {/* Desktop auth */}
+        <div className="hidden items-center gap-3 lg:flex">
+          {session ? (
+            <>
+              <span className="text-sm text-foreground">{session.user?.name}</span>
+              <Button variant="ghost" size="sm" onClick={() => signOut()}>
+                Sign Out
+              </Button>
+            </>
+          ) : (
+            <>
+              <Button variant="ghost" size="sm" asChild>
+                <Link href="/auth/signin">Sign In</Link>
+              </Button>
+              <Button size="sm" asChild>
+                <Link href="/auth/signup">Sign Up</Link>
+              </Button>
+            </>
+          )}
+        </div>
+
+        {/* Mobile nav */}
+        <Sheet>
+          <SheetTrigger asChild className="lg:hidden">
+            <Button variant="ghost" size="icon">
+              <Menu className="h-5 w-5" />
+              <span className="sr-only">Open menu</span>
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="right" className="flex w-[min(288px,85vw)] flex-col bg-background">
+            <SheetTitle className="sr-only">Navigation menu</SheetTitle>
+            <div className="mb-4 pt-2">
+              <Image src={logo} alt="Logo" width={120} height={28} />
+            </div>
+            <Separator className="mb-4" />
+            <nav className="flex flex-col gap-1">
+              {menuData.map((menuItem) =>
+                menuItem.submenu ? (
+                  <div key={menuItem.id}>
+                    <button
+                      onClick={() =>
+                        setOpenSubmenu(
+                          openSubmenu === menuItem.id ? null : menuItem.id,
+                        )
+                      }
+                      className="flex w-full items-center justify-between rounded-md px-3 py-2 text-sm font-medium text-foreground/70 hover:bg-accent"
+                    >
+                      {menuItem.title}
+                      <ChevronDown
+                        className={`h-4 w-4 transition-transform ${openSubmenu === menuItem.id ? "rotate-180" : ""}`}
+                      />
+                    </button>
+                    {openSubmenu === menuItem.id && (
+                      <div className="ml-3 mt-1 flex flex-col gap-1 border-l border-border pl-3">
+                        {menuItem.submenu.map((item) => (
+                          <Link
+                            key={item.id}
+                            href={item.path || "#"}
+                            className="rounded-md px-3 py-1.5 text-sm text-foreground/60 hover:bg-accent hover:text-foreground"
+                          >
+                            {item.title}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    key={menuItem.id}
+                    href={menuItem.path ?? "#"}
+                    className={`rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent ${
+                      pathUrl === menuItem.path
+                        ? "text-primary"
+                        : "text-foreground/70"
                     }`}
                   >
-                    {menuItem.submenu ? (
-                      <>
-                        <DropDown menuItem={menuItem} />
-                      </>
-                    ) : (
-                      <Link
-                        href={`${menuItem.path}`}
-                        className={`hover:nav-gradient relative border border-transparent px-4 py-1.5 text-sm hover:text-white ${
-                          pathUrl === menuItem.path
-                            ? "nav-gradient text-white"
-                            : "text-white/80"
-                        }`}
-                      >
-                        {menuItem.title}
-                      </Link>
-                    )}
-                  </li>
-                ))}
-              </ul>
+                    {menuItem.title}
+                  </Link>
+                ),
+              )}
             </nav>
-
-            <div className="mt-7 flex items-center gap-6 lg:mt-0">
+            <Separator className="my-4" />
+            <div className="flex flex-col gap-2">
               {session ? (
                 <>
-                  <p>{session?.user?.name}</p>
-                  <button
-                    aria-label="Sign Out button"
-                    onClick={() => signOut()}
-                    className="text-sm text-white hover:text-opacity-75"
-                  >
+                  <p className="px-3 text-sm text-foreground">{session.user?.name}</p>
+                  <Button variant="outline" size="sm" onClick={() => signOut()}>
                     Sign Out
-                  </button>
+                  </Button>
                 </>
               ) : (
                 <>
-                  <Link
-                    href="/auth/signin"
-                    className="text-sm text-white hover:text-opacity-75"
-                  >
-                    Sign In
-                  </Link>
-                  <Link
-                    href="/auth/signup"
-                    className="button-border-gradient hover:button-gradient-hover relative flex items-center gap-1.5 rounded-lg px-4.5 py-2 text-sm text-white shadow-button hover:shadow-none"
-                  >
-                    Sign up
-                    <svg
-                      className="mt-0.5"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M14.4002 7.60002L9.2252 2.35002C9.0002 2.12502 8.6502 2.12502 8.4252 2.35002C8.2002 2.57502 8.2002 2.92502 8.4252 3.15002L12.6252 7.42502H2.0002C1.7002 7.42502 1.4502 7.67502 1.4502 7.97502C1.4502 8.27502 1.7002 8.55003 2.0002 8.55003H12.6752L8.4252 12.875C8.2002 13.1 8.2002 13.45 8.4252 13.675C8.5252 13.775 8.6752 13.825 8.8252 13.825C8.9752 13.825 9.1252 13.775 9.2252 13.65L14.4002 8.40002C14.6252 8.17502 14.6252 7.82503 14.4002 7.60002Z"
-                        fill="white"
-                      />
-                    </svg>
-                  </Link>
+                  <Button variant="outline" size="sm" asChild>
+                    <Link href="/auth/signin">Sign In</Link>
+                  </Button>
+                  <Button size="sm" asChild>
+                    <Link href="/auth/signup">Sign Up</Link>
+                  </Button>
                 </>
               )}
             </div>
-          </div>
-        </div>
-      </header>
-    </>
+          </SheetContent>
+        </Sheet>
+      </div>
+    </header>
   );
 };
 

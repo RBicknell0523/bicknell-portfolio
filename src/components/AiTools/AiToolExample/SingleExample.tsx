@@ -15,7 +15,7 @@ const SingleExample = ({ example }: { example: AiExample }) => {
           <Image src={example.icon} alt="icon" width={32} height={32} />
         </span>
 
-        <h3 className="mb-4 text-2xl font-semibold text-white">
+        <h3 className="mb-4 text-2xl font-semibold text-foreground">
           {example.title}
         </h3>
         <p className="font-medium">{example.description}</p>
@@ -23,7 +23,7 @@ const SingleExample = ({ example }: { example: AiExample }) => {
         <Link
           href={example.path}
           aria-label="Try it out! button"
-          className="button-border-gradient hover:button-gradient-hover relative mt-9 inline-block gap-1.5 rounded-lg  px-6 py-3 text-sm text-white shadow-button hover:shadow-none"
+          className="button-border-gradient hover:button-gradient-hover relative mt-9 inline-block gap-1.5 rounded-lg  px-6 py-3 text-sm text-foreground shadow-button hover:shadow-none"
         >
           Try it out!
         </Link>

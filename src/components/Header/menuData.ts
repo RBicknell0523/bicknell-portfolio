@@ -61,7 +61,7 @@ const menuData: Menu[] = [
         path: "/auth/signup",
       },
       {
-        id: 35,
+        id: 37,
         title: "Docs",
         newTab: false,
         path: "/docs",

@@ -7,7 +7,7 @@ export default async function DocsLayout({ children }: PropsWithChildren) {
 
   return (
     <div className='mx-auto grid max-w-[1170px] gap-x-8 gap-y-4 pt-24 pb-16 md:pt-28 md:pb-20 lg:grid-cols-[auto_1fr] lg:pt-32 lg:pb-24'>
-      <aside className='max-h-fit rounded-lg bg-white/5 p-4 lg:sticky lg:top-[80px]'>
+      <aside className='max-h-fit rounded-lg bg-card border border-border p-4 lg:sticky lg:top-[80px]'>
         <nav>
           <ul className='space-y-2'>
             {posts.map((post, key) => (
@@ -17,7 +17,7 @@ export default async function DocsLayout({ children }: PropsWithChildren) {
         </nav>
       </aside>
 
-      <main className='prose prose-invert rounded-lg bg-white/5 px-8 py-11 sm:p-[55px] lg:px-8 xl:p-[55px]'>
+      <main className='prose rounded-lg bg-card border border-border px-8 py-11 sm:p-[55px] lg:px-8 xl:p-[55px]'>
         {children}
       </main>
     </div>

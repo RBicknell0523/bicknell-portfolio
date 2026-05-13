@@ -14,14 +14,14 @@ const SingleTeam = ({ team }: { team: Team }) => {
           className="rounded-full object-cover object-center"
         />
       </div>
-      <h3 className="mb-2.5 text-heading-6 font-semibold text-white">{name}</h3>
+      <h3 className="mb-2.5 text-heading-6 font-semibold text-foreground">{name}</h3>
       <p className="mb-6 font-medium">{designation}</p>
 
       <div className="flex items-center justify-center gap-5">
         <a
           aria-label="social icon"
           href={fbLink}
-          className="duration-300 ease-in hover:text-white"
+          className="duration-300 ease-in hover:text-primary"
         >
           <svg
             className="fill-current"
@@ -41,7 +41,7 @@ const SingleTeam = ({ team }: { team: Team }) => {
         <a
           aria-label="social icon"
           href={twitterLink}
-          className="duration-300 ease-in hover:text-white"
+          className="duration-300 ease-in hover:text-primary"
         >
           <svg
             className="fill-current"
@@ -61,7 +61,7 @@ const SingleTeam = ({ team }: { team: Team }) => {
         <a
           aria-label="social icon"
           href={instagramLink}
-          className="duration-300 ease-in hover:text-white"
+          className="duration-300 ease-in hover:text-primary"
         >
           <svg
             className="fill-current"

@@ -12,7 +12,7 @@ const AboutSection = () => {
               About Our App
             </span>
 
-            <h2 className="mb-5 text-2xl font-extrabold text-white sm:text-4xl xl:text-heading-2">
+            <h2 className="mb-5 text-2xl font-extrabold text-foreground sm:text-4xl xl:text-heading-2">
               10,000+ Writers, Marketers, & Business owners Love AI Tool.
             </h2>
             <p className="mb-9 font-medium">

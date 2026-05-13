@@ -35,7 +35,7 @@ const BlogGridContainer = ({ blogs }: { blogs: Blog[] }) => {
         next={fetchMoreData}
         hasMore={hasMore}
         loader={
-          <div className='col-span-full flex w-full items-center justify-center px-4 text-white'>
+          <div className='col-span-full flex w-full items-center justify-center px-4 text-muted-foreground'>
             Loading...
           </div>
         }

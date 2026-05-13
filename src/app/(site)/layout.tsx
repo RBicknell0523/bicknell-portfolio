@@ -26,7 +26,7 @@ export default function RootLayout({
       <body>
         <div className='isolate'>
           <NextTopLoader
-            color='#8646F4'
+            color='#22c55e'
             crawlSpeed={300}
             showSpinner={false}
             shadow='none'
