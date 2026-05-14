@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 
 const skills = [
@@ -18,10 +18,9 @@ const About = () => {
 
           {/* Left: avatar + social links */}
           <div className="flex flex-col items-center gap-5 lg:items-start">
-            <Avatar className="h-32 w-32 border-2 border-border">
-              <AvatarImage src="/images/about/avatar.png" alt="Robert Bicknell" />
-              <AvatarFallback className="text-3xl font-bold text-primary">RB</AvatarFallback>
-            </Avatar>
+            <div className="relative h-64 w-48 overflow-hidden rounded-xl border-2 border-border">
+              <Image src="/images/about/avatar.png" alt="Robert Bicknell" fill className="object-cover object-top" />
+            </div>
 
             <div className="flex gap-3">
               {/* GitHub */}
