@@ -18,7 +18,7 @@ const About = () => {
 
           {/* Left: avatar + social links */}
           <div className="flex flex-col items-center gap-5 lg:items-start">
-            <Avatar className="h-36 w-36 border-2 border-border">
+            <Avatar className="h-32 w-32 border-2 border-border">
               <AvatarImage src="/images/about/avatar.jpg" alt="Your Name" />
               <AvatarFallback className="text-3xl font-bold text-primary">YN</AvatarFallback>
             </Avatar>
@@ -80,8 +80,8 @@ const About = () => {
               Tech Stack
             </p>
             <div className="flex flex-wrap gap-2">
-              {skills.map((skill, index) => (
-                <Badge key={index} variant="secondary">
+              {skills.map((skill) => (
+                <Badge key={skill} variant="secondary">
                   {skill}
                 </Badge>
               ))}
