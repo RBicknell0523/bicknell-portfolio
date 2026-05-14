@@ -21,8 +21,8 @@ const Header = () => {
 
   useEffect(() => {
     const about = document.getElementById("about");
-    if (!about) return;
-    const check = () => setStickyMenu(about.getBoundingClientRect().top <= 0);
+    const threshold = about ? about.offsetTop : window.innerHeight;
+    const check = () => setStickyMenu(window.scrollY >= threshold);
     window.addEventListener("scroll", check, { passive: true });
     return () => window.removeEventListener("scroll", check);
   }, []);

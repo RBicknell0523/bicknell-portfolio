@@ -1,0 +1,113 @@
+<h2>How should the About section look?</h2>
+<p class="subtitle">All three include a bio and a tech stack — the difference is structure and emphasis</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 16px; background: #1c1008;">
+      <div style="display: grid; grid-template-columns: 100px 1fr; gap: 16px; align-items: start;">
+        <!-- Avatar left -->
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+          <div style="width: 80px; height: 80px; border-radius: 50%; background: #3d2314; border: 2px solid #c4967a55;"></div>
+          <div style="display: flex; gap: 6px;">
+            <div style="width: 18px; height: 18px; border-radius: 50%; background: #3d2314; border: 1px solid #5c3620;"></div>
+            <div style="width: 18px; height: 18px; border-radius: 50%; background: #3d2314; border: 1px solid #5c3620;"></div>
+            <div style="width: 18px; height: 18px; border-radius: 50%; background: #3d2314; border: 1px solid #5c3620;"></div>
+          </div>
+        </div>
+        <!-- Bio + skills right -->
+        <div>
+          <div style="height: 13px; background: #5c3620; border-radius: 3px; width: 55%; margin-bottom: 10px;"></div>
+          <div style="height: 7px; background: #3d2314; border-radius: 3px; width: 100%; margin-bottom: 4px;"></div>
+          <div style="height: 7px; background: #3d2314; border-radius: 3px; width: 95%; margin-bottom: 4px;"></div>
+          <div style="height: 7px; background: #3d2314; border-radius: 3px; width: 80%; margin-bottom: 14px;"></div>
+          <div style="height: 9px; background: #5c3620; border-radius: 3px; width: 35%; margin-bottom: 8px;"></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+            <div style="height: 20px; width: 48px; background: #c4967a22; border: 1px solid #c4967a44; border-radius: 4px;"></div>
+            <div style="height: 20px; width: 52px; background: #c4967a22; border: 1px solid #c4967a44; border-radius: 4px;"></div>
+            <div style="height: 20px; width: 44px; background: #c4967a22; border: 1px solid #c4967a44; border-radius: 4px;"></div>
+            <div style="height: 20px; width: 60px; background: #c4967a22; border: 1px solid #c4967a44; border-radius: 4px;"></div>
+            <div style="height: 20px; width: 40px; background: #c4967a22; border: 1px solid #c4967a44; border-radius: 4px;"></div>
+            <div style="height: 20px; width: 54px; background: #c4967a22; border: 1px solid #c4967a44; border-radius: 4px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Photo + Bio + Badges</h3>
+      <p>Avatar on the left with social icons, bio and "Tech Stack" badge list on the right. Personal and direct.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 16px; background: #1c1008;">
+      <div style="text-align: center;">
+        <!-- Centered name + tagline -->
+        <div style="height: 14px; background: #5c3620; border-radius: 3px; width: 40%; margin: 0 auto 10px;"></div>
+        <div style="height: 7px; background: #3d2314; border-radius: 3px; width: 85%; margin: 0 auto 4px;"></div>
+        <div style="height: 7px; background: #3d2314; border-radius: 3px; width: 75%; margin: 0 auto 16px;"></div>
+        <!-- Two-column skill areas -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; text-align: left; margin-top: 10px;">
+          <div style="background: #2a1810; border: 1px solid #3d2314; border-radius: 6px; padding: 10px;">
+            <div style="height: 9px; background: #c4967a55; border-radius: 3px; width: 60%; margin-bottom: 8px;"></div>
+            <div style="height: 6px; background: #3d2314; border-radius: 3px; width: 100%; margin-bottom: 4px;"></div>
+            <div style="height: 6px; background: #3d2314; border-radius: 3px; width: 80%; margin-bottom: 4px;"></div>
+            <div style="height: 6px; background: #3d2314; border-radius: 3px; width: 90%;"></div>
+          </div>
+          <div style="background: #2a1810; border: 1px solid #3d2314; border-radius: 6px; padding: 10px;">
+            <div style="height: 9px; background: #c4967a55; border-radius: 3px; width: 55%; margin-bottom: 8px;"></div>
+            <div style="height: 6px; background: #3d2314; border-radius: 3px; width: 100%; margin-bottom: 4px;"></div>
+            <div style="height: 6px; background: #3d2314; border-radius: 3px; width: 70%; margin-bottom: 4px;"></div>
+            <div style="height: 6px; background: #3d2314; border-radius: 3px; width: 85%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Centered Bio + Skill Cards</h3>
+      <p>Centered bio up top, then two skill category cards below (e.g. "Frontend" and "Backend"). No photo — text-first and minimal.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 16px; background: #1c1008;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: center;">
+        <!-- Left: bio + CTA -->
+        <div>
+          <div style="height: 13px; background: #5c3620; border-radius: 3px; width: 65%; margin-bottom: 10px;"></div>
+          <div style="height: 7px; background: #3d2314; border-radius: 3px; width: 100%; margin-bottom: 4px;"></div>
+          <div style="height: 7px; background: #3d2314; border-radius: 3px; width: 95%; margin-bottom: 4px;"></div>
+          <div style="height: 7px; background: #3d2314; border-radius: 3px; width: 85%; margin-bottom: 4px;"></div>
+          <div style="height: 7px; background: #3d2314; border-radius: 3px; width: 70%; margin-bottom: 14px;"></div>
+          <div style="height: 24px; width: 90px; background: #c4967a; border-radius: 5px;"></div>
+        </div>
+        <!-- Right: stat blocks -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+          <div style="background: #2a1810; border: 1px solid #3d2314; border-radius: 6px; padding: 10px; text-align: center;">
+            <div style="height: 18px; background: #c4967a44; border-radius: 3px; width: 50%; margin: 0 auto 5px;"></div>
+            <div style="height: 7px; background: #3d2314; border-radius: 3px; width: 70%; margin: 0 auto;"></div>
+          </div>
+          <div style="background: #2a1810; border: 1px solid #3d2314; border-radius: 6px; padding: 10px; text-align: center;">
+            <div style="height: 18px; background: #c4967a44; border-radius: 3px; width: 50%; margin: 0 auto 5px;"></div>
+            <div style="height: 7px; background: #3d2314; border-radius: 3px; width: 70%; margin: 0 auto;"></div>
+          </div>
+          <div style="background: #2a1810; border: 1px solid #3d2314; border-radius: 6px; padding: 10px; text-align: center;">
+            <div style="height: 18px; background: #c4967a44; border-radius: 3px; width: 50%; margin: 0 auto 5px;"></div>
+            <div style="height: 7px; background: #3d2314; border-radius: 3px; width: 70%; margin: 0 auto;"></div>
+          </div>
+          <div style="background: #2a1810; border: 1px solid #3d2314; border-radius: 6px; padding: 10px; text-align: center;">
+            <div style="height: 18px; background: #c4967a44; border-radius: 3px; width: 50%; margin: 0 auto 5px;"></div>
+            <div style="height: 7px; background: #3d2314; border-radius: 3px; width: 70%; margin: 0 auto;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Two-Column: Bio + Stats</h3>
+      <p>Bio and a CTA button on the left, four stat/highlight blocks on the right (e.g. "3+ years", "20 projects", "React", "Node"). Confident and punchy.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top: 24px;">Click to select, then confirm in the terminal</p>

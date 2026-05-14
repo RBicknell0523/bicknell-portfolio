@@ -22,11 +22,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en' className={plusJakarta.className}>
+    <html lang='en' className={`${plusJakarta.className} dark`}>
       <body>
         <div className='isolate'>
           <NextTopLoader
-            color='#22c55e'
+            color='#c4967a'
             crawlSpeed={300}
             showSpinner={false}
             shadow='none'

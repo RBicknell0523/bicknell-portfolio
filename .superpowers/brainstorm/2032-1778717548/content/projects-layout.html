@@ -1,0 +1,166 @@
+<h2>How should the Projects section be laid out?</h2>
+<p class="subtitle">Pick the card style that fits best — all use shadcn Card components</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 16px; background: #1c1008;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <div style="background: #2a1810; border: 1px solid #3d2314; border-radius: 8px; padding: 12px;">
+          <div style="height: 60px; background: #3d2314; border-radius: 4px; margin-bottom: 8px;"></div>
+          <div style="height: 10px; background: #5c3620; border-radius: 3px; width: 80%; margin-bottom: 6px;"></div>
+          <div style="height: 8px; background: #3d2314; border-radius: 3px; width: 100%; margin-bottom: 4px;"></div>
+          <div style="height: 8px; background: #3d2314; border-radius: 3px; width: 70%; margin-bottom: 8px;"></div>
+          <div style="display: flex; gap: 4px;">
+            <div style="height: 18px; width: 40px; background: #c4967a22; border: 1px solid #c4967a44; border-radius: 4px;"></div>
+            <div style="height: 18px; width: 36px; background: #c4967a22; border: 1px solid #c4967a44; border-radius: 4px;"></div>
+          </div>
+        </div>
+        <div style="background: #2a1810; border: 1px solid #3d2314; border-radius: 8px; padding: 12px;">
+          <div style="height: 60px; background: #3d2314; border-radius: 4px; margin-bottom: 8px;"></div>
+          <div style="height: 10px; background: #5c3620; border-radius: 3px; width: 80%; margin-bottom: 6px;"></div>
+          <div style="height: 8px; background: #3d2314; border-radius: 3px; width: 100%; margin-bottom: 4px;"></div>
+          <div style="height: 8px; background: #3d2314; border-radius: 3px; width: 70%; margin-bottom: 8px;"></div>
+          <div style="display: flex; gap: 4px;">
+            <div style="height: 18px; width: 40px; background: #c4967a22; border: 1px solid #c4967a44; border-radius: 4px;"></div>
+            <div style="height: 18px; width: 36px; background: #c4967a22; border: 1px solid #c4967a44; border-radius: 4px;"></div>
+          </div>
+        </div>
+        <div style="background: #2a1810; border: 1px solid #3d2314; border-radius: 8px; padding: 12px;">
+          <div style="height: 60px; background: #3d2314; border-radius: 4px; margin-bottom: 8px;"></div>
+          <div style="height: 10px; background: #5c3620; border-radius: 3px; width: 60%; margin-bottom: 6px;"></div>
+          <div style="height: 8px; background: #3d2314; border-radius: 3px; width: 100%; margin-bottom: 4px;"></div>
+          <div style="height: 8px; background: #3d2314; border-radius: 3px; width: 80%; margin-bottom: 8px;"></div>
+          <div style="display: flex; gap: 4px;">
+            <div style="height: 18px; width: 36px; background: #c4967a22; border: 1px solid #c4967a44; border-radius: 4px;"></div>
+          </div>
+        </div>
+        <div style="background: #2a1810; border: 1px solid #3d2314; border-radius: 8px; padding: 12px;">
+          <div style="height: 60px; background: #3d2314; border-radius: 4px; margin-bottom: 8px;"></div>
+          <div style="height: 10px; background: #5c3620; border-radius: 3px; width: 75%; margin-bottom: 6px;"></div>
+          <div style="height: 8px; background: #3d2314; border-radius: 3px; width: 100%; margin-bottom: 4px;"></div>
+          <div style="height: 8px; background: #3d2314; border-radius: 3px; width: 60%; margin-bottom: 8px;"></div>
+          <div style="display: flex; gap: 4px;">
+            <div style="height: 18px; width: 44px; background: #c4967a22; border: 1px solid #c4967a44; border-radius: 4px;"></div>
+            <div style="height: 18px; width: 36px; background: #c4967a22; border: 1px solid #c4967a44; border-radius: 4px;"></div>
+            <div style="height: 18px; width: 30px; background: #c4967a22; border: 1px solid #c4967a44; border-radius: 4px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — 2×2 Grid</h3>
+      <p>Equal-weight cards in a 2-column grid. Image/preview area at top, title, description, tech stack badges. Clean and symmetrical.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 16px; background: #1c1008;">
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="background: #2a1810; border: 1px solid #3d2314; border-radius: 8px; padding: 12px; display: flex; gap: 12px; align-items: flex-start;">
+          <div style="width: 80px; height: 60px; background: #3d2314; border-radius: 4px; flex-shrink: 0;"></div>
+          <div style="flex: 1;">
+            <div style="height: 10px; background: #5c3620; border-radius: 3px; width: 60%; margin-bottom: 6px;"></div>
+            <div style="height: 8px; background: #3d2314; border-radius: 3px; width: 100%; margin-bottom: 4px;"></div>
+            <div style="height: 8px; background: #3d2314; border-radius: 3px; width: 80%; margin-bottom: 8px;"></div>
+            <div style="display: flex; gap: 4px;">
+              <div style="height: 16px; width: 40px; background: #c4967a22; border: 1px solid #c4967a44; border-radius: 4px;"></div>
+              <div style="height: 16px; width: 36px; background: #c4967a22; border: 1px solid #c4967a44; border-radius: 4px;"></div>
+              <div style="height: 16px; width: 44px; background: #c4967a22; border: 1px solid #c4967a44; border-radius: 4px;"></div>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 4px; align-items: flex-end;">
+            <div style="height: 20px; width: 56px; background: #c4967a33; border: 1px solid #c4967a55; border-radius: 4px;"></div>
+            <div style="height: 20px; width: 52px; background: #3d2314; border: 1px solid #5c3620; border-radius: 4px;"></div>
+          </div>
+        </div>
+        <div style="background: #2a1810; border: 1px solid #3d2314; border-radius: 8px; padding: 12px; display: flex; gap: 12px; align-items: flex-start;">
+          <div style="width: 80px; height: 60px; background: #3d2314; border-radius: 4px; flex-shrink: 0;"></div>
+          <div style="flex: 1;">
+            <div style="height: 10px; background: #5c3620; border-radius: 3px; width: 50%; margin-bottom: 6px;"></div>
+            <div style="height: 8px; background: #3d2314; border-radius: 3px; width: 100%; margin-bottom: 4px;"></div>
+            <div style="height: 8px; background: #3d2314; border-radius: 3px; width: 70%; margin-bottom: 8px;"></div>
+            <div style="display: flex; gap: 4px;">
+              <div style="height: 16px; width: 36px; background: #c4967a22; border: 1px solid #c4967a44; border-radius: 4px;"></div>
+              <div style="height: 16px; width: 44px; background: #c4967a22; border: 1px solid #c4967a44; border-radius: 4px;"></div>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 4px; align-items: flex-end;">
+            <div style="height: 20px; width: 56px; background: #c4967a33; border: 1px solid #c4967a55; border-radius: 4px;"></div>
+            <div style="height: 20px; width: 52px; background: #3d2314; border: 1px solid #5c3620; border-radius: 4px;"></div>
+          </div>
+        </div>
+        <div style="background: #2a1810; border: 1px solid #3d2314; border-radius: 8px; padding: 12px; display: flex; gap: 12px; align-items: flex-start;">
+          <div style="width: 80px; height: 60px; background: #3d2314; border-radius: 4px; flex-shrink: 0;"></div>
+          <div style="flex: 1;">
+            <div style="height: 10px; background: #5c3620; border-radius: 3px; width: 70%; margin-bottom: 6px;"></div>
+            <div style="height: 8px; background: #3d2314; border-radius: 3px; width: 100%; margin-bottom: 4px;"></div>
+            <div style="height: 8px; background: #3d2314; border-radius: 3px; width: 55%; margin-bottom: 8px;"></div>
+            <div style="display: flex; gap: 4px;">
+              <div style="height: 16px; width: 40px; background: #c4967a22; border: 1px solid #c4967a44; border-radius: 4px;"></div>
+              <div style="height: 16px; width: 30px; background: #c4967a22; border: 1px solid #c4967a44; border-radius: 4px;"></div>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 4px; align-items: flex-end;">
+            <div style="height: 20px; width: 56px; background: #c4967a33; border: 1px solid #c4967a55; border-radius: 4px;"></div>
+            <div style="height: 20px; width: 52px; background: #3d2314; border: 1px solid #5c3620; border-radius: 4px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Horizontal List</h3>
+      <p>Each project is a full-width row: thumbnail left, title + description + badges in the middle, Live / GitHub buttons on the right.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 16px; background: #1c1008;">
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="background: #2a1810; border: 1px solid #3d2314; border-radius: 8px; padding: 14px; display: grid; grid-template-columns: 1fr 1fr;">
+          <div style="padding-right: 12px; border-right: 1px solid #3d2314;">
+            <div style="height: 12px; background: #5c3620; border-radius: 3px; width: 70%; margin-bottom: 8px;"></div>
+            <div style="height: 8px; background: #3d2314; border-radius: 3px; width: 100%; margin-bottom: 4px;"></div>
+            <div style="height: 8px; background: #3d2314; border-radius: 3px; width: 85%; margin-bottom: 4px;"></div>
+            <div style="height: 8px; background: #3d2314; border-radius: 3px; width: 60%; margin-bottom: 10px;"></div>
+            <div style="display: flex; gap: 4px; flex-wrap: wrap;">
+              <div style="height: 16px; width: 38px; background: #c4967a22; border: 1px solid #c4967a44; border-radius: 4px;"></div>
+              <div style="height: 16px; width: 34px; background: #c4967a22; border: 1px solid #c4967a44; border-radius: 4px;"></div>
+              <div style="height: 16px; width: 42px; background: #c4967a22; border: 1px solid #c4967a44; border-radius: 4px;"></div>
+            </div>
+          </div>
+          <div style="padding-left: 12px;">
+            <div style="height: 90px; background: #3d2314; border-radius: 6px;"></div>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          <div style="background: #2a1810; border: 1px solid #3d2314; border-radius: 8px; padding: 12px;">
+            <div style="height: 50px; background: #3d2314; border-radius: 4px; margin-bottom: 8px;"></div>
+            <div style="height: 9px; background: #5c3620; border-radius: 3px; width: 75%; margin-bottom: 5px;"></div>
+            <div style="height: 7px; background: #3d2314; border-radius: 3px; width: 100%; margin-bottom: 8px;"></div>
+            <div style="display: flex; gap: 3px;">
+              <div style="height: 15px; width: 36px; background: #c4967a22; border: 1px solid #c4967a44; border-radius: 4px;"></div>
+              <div style="height: 15px; width: 30px; background: #c4967a22; border: 1px solid #c4967a44; border-radius: 4px;"></div>
+            </div>
+          </div>
+          <div style="background: #2a1810; border: 1px solid #3d2314; border-radius: 8px; padding: 12px;">
+            <div style="height: 50px; background: #3d2314; border-radius: 4px; margin-bottom: 8px;"></div>
+            <div style="height: 9px; background: #5c3620; border-radius: 3px; width: 65%; margin-bottom: 5px;"></div>
+            <div style="height: 7px; background: #3d2314; border-radius: 3px; width: 90%; margin-bottom: 8px;"></div>
+            <div style="display: flex; gap: 3px;">
+              <div style="height: 15px; width: 40px; background: #c4967a22; border: 1px solid #c4967a44; border-radius: 4px;"></div>
+              <div style="height: 15px; width: 34px; background: #c4967a22; border: 1px solid #c4967a44; border-radius: 4px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Featured + Grid</h3>
+      <p>One large "featured" project at the top (text left, image right) with 2–3 smaller cards below. Hierarchy draws attention to your best work.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top: 24px;">Click to select, then let me know in the terminal</p>

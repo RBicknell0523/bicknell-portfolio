@@ -1,0 +1,96 @@
+<h2>How should the Contact section look?</h2>
+<p class="subtitle">Keep it simple — visitors just need a clear way to reach you</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 20px; background: #1c1008;">
+      <div style="text-align: center;">
+        <div style="height: 14px; background: #5c3620; border-radius: 3px; width: 45%; margin: 0 auto 10px;"></div>
+        <div style="height: 7px; background: #3d2314; border-radius: 3px; width: 70%; margin: 0 auto 20px;"></div>
+        <!-- Email pill -->
+        <div style="display: inline-flex; align-items: center; gap: 8px; background: #2a1810; border: 1px solid #3d2314; border-radius: 8px; padding: 10px 20px; margin-bottom: 20px;">
+          <div style="width: 14px; height: 14px; background: #c4967a55; border-radius: 2px;"></div>
+          <div style="height: 9px; background: #5c3620; border-radius: 3px; width: 140px;"></div>
+        </div>
+        <!-- Social icons row -->
+        <div style="display: flex; justify-content: center; gap: 12px;">
+          <div style="width: 40px; height: 40px; border-radius: 8px; background: #2a1810; border: 1px solid #3d2314; display: flex; align-items: center; justify-content: center;">
+            <div style="width: 16px; height: 16px; background: #c4967a44; border-radius: 3px;"></div>
+          </div>
+          <div style="width: 40px; height: 40px; border-radius: 8px; background: #2a1810; border: 1px solid #3d2314; display: flex; align-items: center; justify-content: center;">
+            <div style="width: 16px; height: 16px; background: #c4967a44; border-radius: 3px;"></div>
+          </div>
+          <div style="width: 40px; height: 40px; border-radius: 8px; background: #2a1810; border: 1px solid #3d2314; display: flex; align-items: center; justify-content: center;">
+            <div style="width: 16px; height: 16px; background: #c4967a44; border-radius: 3px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Links Only</h3>
+      <p>Centered heading, a clickable email address, and GitHub / LinkedIn / Twitter icon buttons. No form — minimal and clean.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 20px; background: #1c1008;">
+      <div style="background: #2a1810; border: 1px solid #3d2314; border-radius: 8px; padding: 16px; max-width: 280px; margin: 0 auto;">
+        <div style="height: 12px; background: #5c3620; border-radius: 3px; width: 50%; margin-bottom: 14px;"></div>
+        <!-- Name field -->
+        <div style="height: 7px; background: #3d2314; border-radius: 3px; width: 25%; margin-bottom: 5px;"></div>
+        <div style="height: 28px; background: #1c1008; border: 1px solid #3d2314; border-radius: 5px; margin-bottom: 10px;"></div>
+        <!-- Email field -->
+        <div style="height: 7px; background: #3d2314; border-radius: 3px; width: 20%; margin-bottom: 5px;"></div>
+        <div style="height: 28px; background: #1c1008; border: 1px solid #3d2314; border-radius: 5px; margin-bottom: 10px;"></div>
+        <!-- Message field -->
+        <div style="height: 7px; background: #3d2314; border-radius: 3px; width: 28%; margin-bottom: 5px;"></div>
+        <div style="height: 56px; background: #1c1008; border: 1px solid #3d2314; border-radius: 5px; margin-bottom: 12px;"></div>
+        <!-- Submit -->
+        <div style="height: 32px; background: #c4967a; border-radius: 5px; width: 100%;"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Form Only</h3>
+      <p>A shadcn Card containing Name, Email, Message fields and a Send button. Centered on the page. Focused and straightforward.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 16px; background: #1c1008;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start;">
+        <!-- Left: text + links -->
+        <div>
+          <div style="height: 13px; background: #5c3620; border-radius: 3px; width: 70%; margin-bottom: 10px;"></div>
+          <div style="height: 7px; background: #3d2314; border-radius: 3px; width: 100%; margin-bottom: 4px;"></div>
+          <div style="height: 7px; background: #3d2314; border-radius: 3px; width: 85%; margin-bottom: 16px;"></div>
+          <!-- Email row -->
+          <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 8px;">
+            <div style="width: 12px; height: 12px; background: #c4967a55; border-radius: 2px; flex-shrink: 0;"></div>
+            <div style="height: 8px; background: #5c3620; border-radius: 3px; width: 110px;"></div>
+          </div>
+          <!-- Social -->
+          <div style="display: flex; gap: 8px; margin-top: 12px;">
+            <div style="width: 32px; height: 32px; border-radius: 6px; background: #2a1810; border: 1px solid #3d2314;"></div>
+            <div style="width: 32px; height: 32px; border-radius: 6px; background: #2a1810; border: 1px solid #3d2314;"></div>
+            <div style="width: 32px; height: 32px; border-radius: 6px; background: #2a1810; border: 1px solid #3d2314;"></div>
+          </div>
+        </div>
+        <!-- Right: compact form -->
+        <div style="background: #2a1810; border: 1px solid #3d2314; border-radius: 8px; padding: 12px;">
+          <div style="height: 24px; background: #1c1008; border: 1px solid #3d2314; border-radius: 4px; margin-bottom: 7px;"></div>
+          <div style="height: 24px; background: #1c1008; border: 1px solid #3d2314; border-radius: 4px; margin-bottom: 7px;"></div>
+          <div style="height: 48px; background: #1c1008; border: 1px solid #3d2314; border-radius: 4px; margin-bottom: 10px;"></div>
+          <div style="height: 28px; background: #c4967a; border-radius: 5px;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Split: Text + Form</h3>
+      <p>Left side has a short message, email address, and social icons. Right side has a compact contact form. Best of both — passive and active reach.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top: 24px;">Click to select, then confirm in the terminal</p>

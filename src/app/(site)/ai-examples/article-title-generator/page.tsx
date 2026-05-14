@@ -94,12 +94,12 @@ const ArticleTitleGeneratorPage = () => {
 
       <section className="pb-17.5 lg:pb-22.5 xl:pb-27.5">
         <div className="mx-auto grid max-w-[1170px] gap-8 px-4 sm:px-8 lg:grid-cols-12 xl:px-0">
-          <div className="gradient-box rounded-lg bg-dark-8 p-8 lg:col-span-4">
-            <h2 className="pb-2 text-2xl font-bold text-white">Title Topic</h2>
-            <p className="pb-6">What your title will be about?</p>
+          <div className="rounded-lg border border-border bg-card p-8 lg:col-span-4">
+            <h2 className="pb-2 text-2xl font-bold text-foreground">Title Topic</h2>
+            <p className="pb-6 text-muted-foreground">What your title will be about?</p>
             <form onSubmit={handleSubmit}>
               <div className="flex flex-col">
-                <label htmlFor="articleTopic" className="pb-4">
+                <label htmlFor="articleTopic" className="pb-4 text-foreground">
                   Topic
                 </label>
                 <input
@@ -107,7 +107,7 @@ const ArticleTitleGeneratorPage = () => {
                   value={data.articleTopic}
                   name="articleTopic"
                   type="text"
-                  className="rounded-lg border border-white/[0.12] bg-dark-7 px-5 py-3 text-white outline-hidden focus:border-purple"
+                  className="rounded-lg border border-border bg-input px-5 py-3 text-foreground outline-hidden focus:border-ring"
                   placeholder="Type article topic here"
                   required
                 />
@@ -121,7 +121,7 @@ const ArticleTitleGeneratorPage = () => {
                 selected={data.numberOfWord}
               />
 
-              <button className="hero-button-gradient mt-5 w-full rounded-lg px-7 py-3 text-center font-medium text-white duration-300 ease-in hover:opacity-80 ">
+              <button className="mt-5 w-full rounded-lg bg-primary px-7 py-3 text-center font-medium text-primary-foreground transition-opacity duration-300 ease-in hover:opacity-80">
                 Generate
               </button>
             </form>
