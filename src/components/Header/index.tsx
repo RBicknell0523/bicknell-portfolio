@@ -36,12 +36,14 @@ const Header = () => {
       }`}
     >
       <div className="mx-auto flex max-w-[1170px] items-center justify-between px-4 sm:px-8 xl:px-0">
-        {/* Logo */}
-        <Link href="/">
-          <div className="relative h-32 w-44 overflow-hidden rounded-md">
-            <Image src="/icon.png" alt="Robert Bicknell Development" fill className="object-cover object-center" />
-          </div>
-        </Link>
+        {/* Logo — hidden when sticky */}
+        {!stickyMenu && (
+          <Link href="/">
+            <div className="relative h-32 w-44 overflow-hidden rounded-md">
+              <Image src="/icon.png" alt="Robert Bicknell Development" fill className="object-cover object-center" />
+            </div>
+          </Link>
+        )}
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-1 lg:flex">
@@ -49,7 +51,7 @@ const Header = () => {
             menuItem.submenu ? (
               <div key={menuItem.id} className="group relative">
                 <button
-                  className={`flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground ${
+                  className={`flex items-center gap-1 rounded-md px-3 py-2 text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground ${
                     pathUrl === menuItem.path
                       ? "text-primary"
                       : "text-foreground/70"
@@ -74,7 +76,7 @@ const Header = () => {
               <Link
                 key={menuItem.id}
                 href={menuItem.path ?? "#"}
-                className={`rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground ${
+                className={`rounded-md px-3 py-2 text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground ${
                   pathUrl === menuItem.path
                     ? "text-primary"
                     : "text-foreground/70"
