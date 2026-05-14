@@ -63,7 +63,7 @@ const About = () => {
           </div>
 
           {/* Right: bio + tech stack */}
-          <div>
+          <div className="text-center">
             <h2 className="mb-4 text-3xl font-extrabold text-foreground sm:text-4xl">
               About Me
             </h2>
@@ -78,7 +78,7 @@ const About = () => {
             <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">
               Tech Stack
             </p>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap justify-center gap-2">
               {skills.map((skill) => (
                 <Badge key={skill} variant="secondary">
                   {skill}
