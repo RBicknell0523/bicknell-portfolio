@@ -35,18 +35,19 @@ const Header = () => {
           : "bg-transparent py-5"
       }`}
     >
-      <div className="mx-auto flex max-w-[1170px] items-center justify-between px-4 sm:px-8 xl:px-0">
-        {/* Logo — hidden when sticky */}
-        {!stickyMenu && (
-          <Link href="/">
-            <div className="relative h-32 w-44 overflow-hidden rounded-md">
-              <Image src="/icon.png" alt="Robert Bicknell Development" fill className="object-cover object-center" />
-            </div>
-          </Link>
-        )}
+      <div className="relative mx-auto flex max-w-[1170px] items-center justify-between px-4 sm:px-8 xl:px-0">
+        {/* Logo — fades out when sticky */}
+        <Link
+          href="/"
+          className={`transition-all duration-300 ${stickyMenu ? "pointer-events-none opacity-0" : "opacity-100"}`}
+        >
+          <div className="relative h-32 w-44 overflow-hidden rounded-md">
+            <Image src="/icon.png" alt="Robert Bicknell Development" fill className="object-cover object-center" />
+          </div>
+        </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden items-center gap-1 lg:flex">
+        {/* Desktop nav — absolutely centred */}
+        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 lg:flex">
           {menuData.map((menuItem) =>
             menuItem.submenu ? (
               <div key={menuItem.id} className="group relative">
