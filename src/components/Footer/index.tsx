@@ -16,7 +16,7 @@ const Footer = () => {
               <Image src={logo} alt="Logo" width={120} height={28} />
             </Link>
             <p className="text-xs text-muted-foreground">
-              © {new Date().getFullYear()} Your Name. All rights reserved.
+              © {new Date().getFullYear()} Robert Bicknell. All rights reserved.
             </p>
           </div>
 

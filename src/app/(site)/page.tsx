@@ -5,8 +5,8 @@ import Hero from "@/components/Home/Hero";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Your Name — Full Stack Developer",
-  description: "Personal portfolio of Your Name, a full stack web developer.",
+  title: "Robert Bicknell — Full Stack Developer",
+  description: "Personal portfolio of Robert Bicknell, a full stack web developer.",
 };
 
 export default function Home() {

@@ -14,8 +14,8 @@ const Hero = () => {
         </Badge>
 
         <h1 className="mb-6 text-4xl font-extrabold leading-tight text-foreground sm:text-5xl xl:text-6xl">
-          Hi, I'm{" "}
-          <span className="text-primary">Your Name</span>
+          Hi, I&apos;m{" "}
+          <span className="text-primary">Robert Bicknell</span>
           <br />
           Full Stack Developer
         </h1>

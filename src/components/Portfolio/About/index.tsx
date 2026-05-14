@@ -19,8 +19,8 @@ const About = () => {
           {/* Left: avatar + social links */}
           <div className="flex flex-col items-center gap-5 lg:items-start">
             <Avatar className="h-32 w-32 border-2 border-border">
-              <AvatarImage src="/images/about/avatar.jpg" alt="Your Name" />
-              <AvatarFallback className="text-3xl font-bold text-primary">YN</AvatarFallback>
+              <AvatarImage src="/images/about/avatar.png" alt="Robert Bicknell" />
+              <AvatarFallback className="text-3xl font-bold text-primary">RB</AvatarFallback>
             </Avatar>
 
             <div className="flex gap-3">
