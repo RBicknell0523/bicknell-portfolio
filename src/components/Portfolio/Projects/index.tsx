@@ -42,8 +42,8 @@ const Projects = () => {
                 </CardHeader>
                 <CardContent className="p-0">
                   <div className="flex flex-wrap gap-2">
-                    {featured.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary">
+                    {featured.tags.map((tag, index) => (
+                      <Badge key={index} variant="secondary">
                         {tag}
                       </Badge>
                     ))}
@@ -73,8 +73,8 @@ const Projects = () => {
 
       {/* Grid projects */}
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-        {rest.map((project) => (
-          <Card key={project.title} data-animate className="flex flex-col overflow-hidden">
+        {rest.map((project, index) => (
+          <Card key={index} data-animate className="flex flex-col overflow-hidden">
             {/* Image / animation slot */}
             <div className="aspect-video w-full bg-muted" />
             <div className="flex flex-1 flex-col">
@@ -85,8 +85,8 @@ const Projects = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <Badge key={tag} variant="secondary">
+                {project.tags.map((tag, index) => (
+                  <Badge key={index} variant="secondary">
                     {tag}
                   </Badge>
                 ))}
