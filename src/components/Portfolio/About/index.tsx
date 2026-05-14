@@ -13,7 +13,7 @@ const About = () => {
       data-animate
       className="bg-card"
     >
-      <div className="mx-auto max-w-[1170px] px-4 pt-12 pb-24 sm:px-8 xl:px-0">
+      <div className="mx-auto max-w-[1170px] px-4 pt-0 pb-24 sm:px-8 xl:px-0">
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[auto_1fr]">
 
           {/* Left: avatar + social links */}
