@@ -18,7 +18,7 @@ const About = () => {
 
           {/* Left: avatar + social links */}
           <div className="flex flex-col items-center gap-5 lg:items-start">
-            <div className="relative h-64 w-48 overflow-hidden rounded-xl border-2 border-border">
+            <div className="relative h-64 w-64 overflow-hidden rounded-xl border-2 border-border">
               <Image src="/images/about/avatar.png" alt="Robert Bicknell" fill className="object-cover object-top" />
             </div>
 
