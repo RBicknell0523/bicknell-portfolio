@@ -37,9 +37,10 @@ const Header = () => {
     >
       <div className="mx-auto flex max-w-[1170px] items-center justify-between px-4 sm:px-8 xl:px-0">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <Image src="/icon.png" alt="Robert Bicknell" width={32} height={32} className="rounded-sm" />
-          <span className="font-bold text-foreground">Robert Bicknell</span>
+        <Link href="/">
+          <div className="relative h-12 w-44 overflow-hidden rounded-md">
+            <Image src="/icon.png" alt="Robert Bicknell Development" fill className="object-cover object-center" />
+          </div>
         </Link>
 
         {/* Desktop nav */}
@@ -116,9 +117,10 @@ const Header = () => {
           </SheetTrigger>
           <SheetContent side="right" className="flex w-[min(288px,85vw)] flex-col bg-background">
             <SheetTitle className="sr-only">Navigation menu</SheetTitle>
-            <div className="mb-4 flex items-center gap-2 pt-2">
-              <Image src="/icon.png" alt="Robert Bicknell" width={28} height={28} className="rounded-sm" />
-              <span className="font-bold text-foreground">Robert Bicknell</span>
+            <div className="mb-4 pt-2">
+              <div className="relative h-10 w-36 overflow-hidden rounded-md">
+                <Image src="/icon.png" alt="Robert Bicknell Development" fill className="object-cover object-center" />
+              </div>
             </div>
             <Separator className="mb-4" />
             <nav className="flex flex-col gap-1">

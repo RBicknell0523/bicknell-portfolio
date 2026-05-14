@@ -11,9 +11,10 @@ const Footer = () => {
         <div className="flex flex-col items-center gap-8 sm:flex-row sm:justify-between">
           {/* Logo + copyright */}
           <div className="flex flex-col items-center gap-3 sm:items-start">
-            <Link href="/" className="flex items-center gap-2">
-              <Image src="/icon.png" alt="Robert Bicknell" width={28} height={28} className="rounded-sm" />
-              <span className="font-bold text-foreground">Robert Bicknell</span>
+            <Link href="/">
+              <div className="relative h-12 w-44 overflow-hidden rounded-md">
+                <Image src="/icon.png" alt="Robert Bicknell Development" fill className="object-cover object-center" />
+              </div>
             </Link>
             <p className="text-xs text-muted-foreground">
               © {new Date().getFullYear()} Robert Bicknell. All rights reserved.
