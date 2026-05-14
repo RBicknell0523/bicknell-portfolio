@@ -67,7 +67,7 @@ const About = () => {
             <h2 className="mb-4 text-3xl font-extrabold text-foreground sm:text-4xl">
               About Me
             </h2>
-            <p className="mb-6 max-w-[600px] leading-relaxed text-muted-foreground">
+            <p className="mx-auto mb-6 max-w-[600px] leading-relaxed text-muted-foreground">
               I&apos;m a full stack developer with a passion for building clean,
               performant web experiences. I enjoy working across the entire
               stack — from designing systems to shipping pixel-perfect UIs.
