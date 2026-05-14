@@ -1,5 +1,4 @@
 "use client";
-import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -18,7 +17,6 @@ import { Separator } from "@/components/ui/separator";
 const Header = () => {
   const [stickyMenu, setStickyMenu] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState<number | null>(null);
-  const { data: session } = useSession();
   const pathUrl = usePathname();
 
   useEffect(() => {
@@ -89,26 +87,6 @@ const Header = () => {
           )}
         </nav>
 
-        {/* Desktop auth */}
-        <div className="hidden items-center gap-3 lg:flex">
-          {session ? (
-            <>
-              <span className="text-sm text-foreground">{session.user?.name}</span>
-              <Button variant="ghost" size="sm" onClick={() => signOut()}>
-                Sign Out
-              </Button>
-            </>
-          ) : (
-            <>
-              <Button variant="ghost" size="sm" asChild>
-                <Link href="/auth/signin">Sign In</Link>
-              </Button>
-              <Button size="sm" asChild>
-                <Link href="/auth/signup">Sign Up</Link>
-              </Button>
-            </>
-          )}
-        </div>
 
         {/* Mobile nav */}
         <Sheet>
@@ -172,26 +150,6 @@ const Header = () => {
                 ),
               )}
             </nav>
-            <Separator className="my-4" />
-            <div className="flex flex-col gap-2">
-              {session ? (
-                <>
-                  <p className="px-3 text-sm text-foreground">{session.user?.name}</p>
-                  <Button variant="outline" size="sm" onClick={() => signOut()}>
-                    Sign Out
-                  </Button>
-                </>
-              ) : (
-                <>
-                  <Button variant="outline" size="sm" asChild>
-                    <Link href="/auth/signin">Sign In</Link>
-                  </Button>
-                  <Button size="sm" asChild>
-                    <Link href="/auth/signup">Sign Up</Link>
-                  </Button>
-                </>
-              )}
-            </div>
           </SheetContent>
         </Sheet>
       </div>
