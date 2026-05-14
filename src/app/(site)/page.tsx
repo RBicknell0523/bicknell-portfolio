@@ -1,7 +1,7 @@
 import About from "@/components/Portfolio/About";
 import Contact from "@/components/Portfolio/Contact";
 import Projects from "@/components/Portfolio/Projects";
-import Hero from "@/components/Home/Hero";
+import ShaderHeroSection from "@/components/Home/Hero/ShaderHeroSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <Hero />
+      <ShaderHeroSection />
       <About />
       <Projects />
       <Contact />

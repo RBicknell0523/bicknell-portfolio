@@ -2,84 +2,84 @@
 @plugin "@tailwindcss/typography";
 
 :root {
-  --card: #ffffff;
-  --ring: #22c55e;
-  --input: #e5e7eb;
-  --muted: #f3f4f6;
-  --accent: #d1fae5;
-  --border: #e5e7eb;
+  --card: #fdfaf6;
+  --ring: #9b6b4f;
+  --input: #dcc8b0;
+  --muted: #eee0cd;
+  --accent: #e8d4bc;
+  --border: #dcc8b0;
   --radius: 0.5rem;
-  --chart-1: #22c55e;
-  --chart-2: #10b981;
-  --chart-3: #059669;
-  --chart-4: #047857;
-  --chart-5: #065f46;
-  --popover: #ffffff;
-  --primary: #22c55e;
-  --sidebar: #e0f2fe;
+  --chart-1: #9b6b4f;
+  --chart-2: #c4967a;
+  --chart-3: #7b4f35;
+  --chart-4: #d4b090;
+  --chart-5: #5c3620;
+  --popover: #fdfaf6;
+  --primary: #9b6b4f;
+  --sidebar: #eee0cd;
   --font-mono: IBM Plex Mono, monospace;
   --font-sans: DM Sans, sans-serif;
-  --secondary: #e0f2fe;
-  --background: #f0f8ff;
+  --secondary: #e8d4bc;
+  --background: #f5ede0;
   --font-serif: Lora, serif;
-  --foreground: #374151;
-  --destructive: #ef4444;
+  --foreground: #2d1810;
+  --destructive: #c0392b;
   --shadow-blur: 8px;
-  --shadow-color: hsl(0 0% 0%);
-  --sidebar-ring: #22c55e;
+  --shadow-color: hsl(20 40% 10%);
+  --sidebar-ring: #9b6b4f;
   --shadow-spread: -1px;
-  --shadow-opacity: 0.1;
-  --sidebar-accent: #d1fae5;
-  --sidebar-border: #e5e7eb;
-  --card-foreground: #374151;
+  --shadow-opacity: 0.12;
+  --sidebar-accent: #e8d4bc;
+  --sidebar-border: #dcc8b0;
+  --card-foreground: #2d1810;
   --shadow-offset-x: 0px;
   --shadow-offset-y: 4px;
-  --sidebar-primary: #22c55e;
-  --muted-foreground: #6b7280;
-  --accent-foreground: #374151;
-  --popover-foreground: #374151;
-  --primary-foreground: #ffffff;
-  --sidebar-foreground: #374151;
-  --secondary-foreground: #4b5563;
-  --destructive-foreground: #ffffff;
-  --sidebar-accent-foreground: #374151;
-  --sidebar-primary-foreground: #ffffff;
+  --sidebar-primary: #9b6b4f;
+  --muted-foreground: #7b4f35;
+  --accent-foreground: #3d2314;
+  --popover-foreground: #2d1810;
+  --primary-foreground: #fdf8f4;
+  --sidebar-foreground: #2d1810;
+  --secondary-foreground: #5c3620;
+  --destructive-foreground: #fdf8f4;
+  --sidebar-accent-foreground: #3d2314;
+  --sidebar-primary-foreground: #fdf8f4;
 }
 
 .dark {
-  --card: #1e293b;
-  --ring: #34d399;
-  --input: #4b5563;
-  --muted: #1e293b;
-  --accent: #374151;
-  --border: #4b5563;
+  --card: #2a1810;
+  --ring: #c4967a;
+  --input: #3d2314;
+  --muted: #3d2314;
+  --accent: #3d2314;
+  --border: #3d2314;
   --radius: 0.5rem;
-  --chart-1: #34d399;
-  --chart-2: #2dd4bf;
-  --chart-3: #22c55e;
-  --chart-4: #10b981;
-  --chart-5: #059669;
-  --popover: #1e293b;
-  --primary: #34d399;
-  --sidebar: #1e293b;
-  --secondary: #2d3748;
-  --background: #0f172a;
-  --foreground: #d1d5db;
-  --destructive: #ef4444;
-  --sidebar-ring: #34d399;
-  --sidebar-accent: #374151;
-  --sidebar-border: #4b5563;
-  --card-foreground: #d1d5db;
-  --sidebar-primary: #34d399;
-  --muted-foreground: #6b7280;
-  --accent-foreground: #a1a1aa;
-  --popover-foreground: #d1d5db;
-  --primary-foreground: #0f172a;
-  --sidebar-foreground: #d1d5db;
-  --secondary-foreground: #a1a1aa;
-  --destructive-foreground: #0f172a;
-  --sidebar-accent-foreground: #a1a1aa;
-  --sidebar-primary-foreground: #0f172a;
+  --chart-1: #c4967a;
+  --chart-2: #a47864;
+  --chart-3: #d4b090;
+  --chart-4: #7b4f35;
+  --chart-5: #e2c9a8;
+  --popover: #2a1810;
+  --primary: #c4967a;
+  --sidebar: #120a06;
+  --secondary: #3d2314;
+  --background: #1c1008;
+  --foreground: #f0dec8;
+  --destructive: #b54a3c;
+  --sidebar-ring: #c4967a;
+  --sidebar-accent: #3d2314;
+  --sidebar-border: #3d2314;
+  --card-foreground: #f0dec8;
+  --sidebar-primary: #c4967a;
+  --muted-foreground: #9b6b4f;
+  --accent-foreground: #e2c9a8;
+  --popover-foreground: #f0dec8;
+  --primary-foreground: #1c1008;
+  --sidebar-foreground: #f0dec8;
+  --secondary-foreground: #d4b090;
+  --destructive-foreground: #f8f0e8;
+  --sidebar-accent-foreground: #d4b090;
+  --sidebar-primary-foreground: #1c1008;
 }
 
 @theme inline {
@@ -701,6 +701,42 @@
     @apply opacity-100;
   }
 }
+
+/* animated-shader-hero keyframes */
+@keyframes fade-in-down {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-fade-in-down {
+  animation: fade-in-down 0.8s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+.animation-delay-200 { animation-delay: 0.2s; }
+.animation-delay-400 { animation-delay: 0.4s; }
+.animation-delay-600 { animation-delay: 0.6s; }
+.animation-delay-800 { animation-delay: 0.8s; }
 
 .clients-carousel .swiper-slide {
   @apply w-auto;
