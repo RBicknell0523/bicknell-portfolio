@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../../../public/images/logo/logo.svg";
 import { Separator } from "@/components/ui/separator";
 
 const Footer = () => {
@@ -12,8 +11,9 @@ const Footer = () => {
         <div className="flex flex-col items-center gap-8 sm:flex-row sm:justify-between">
           {/* Logo + copyright */}
           <div className="flex flex-col items-center gap-3 sm:items-start">
-            <Link href="/">
-              <Image src={logo} alt="Logo" width={120} height={28} />
+            <Link href="/" className="flex items-center gap-2">
+              <Image src="/icon.png" alt="Robert Bicknell" width={28} height={28} className="rounded-sm" />
+              <span className="font-bold text-foreground">Robert Bicknell</span>
             </Link>
             <p className="text-xs text-muted-foreground">
               © {new Date().getFullYear()} Robert Bicknell. All rights reserved.
