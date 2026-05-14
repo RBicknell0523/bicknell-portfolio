@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -82,7 +84,7 @@ const Contact = () => {
           {/* Right: contact form */}
           <Card>
             <CardContent className="p-6">
-              <form className="flex flex-col gap-5">
+              <form className="flex flex-col gap-5" onSubmit={(e) => e.preventDefault()}>
                 <div className="flex flex-col gap-2">
                   <Label htmlFor="name">Name</Label>
                   <Input id="name" name="name" placeholder="Your name" required />

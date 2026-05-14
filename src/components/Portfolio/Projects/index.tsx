@@ -42,8 +42,8 @@ const Projects = () => {
                 </CardHeader>
                 <CardContent className="p-0">
                   <div className="flex flex-wrap gap-2">
-                    {featured.tags.map((tag, index) => (
-                      <Badge key={index} variant="secondary">
+                    {featured.tags.map((tag) => (
+                      <Badge key={tag} variant="secondary">
                         {tag}
                       </Badge>
                     ))}
@@ -85,8 +85,8 @@ const Projects = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex flex-wrap gap-2">
-                {project.tags.map((tag, index) => (
-                  <Badge key={index} variant="secondary">
+                {project.tags.map((tag) => (
+                  <Badge key={tag} variant="secondary">
                     {tag}
                   </Badge>
                 ))}
