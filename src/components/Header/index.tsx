@@ -20,12 +20,7 @@ const Header = () => {
   const pathUrl = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => {
-      const about = document.getElementById("about");
-      if (about) {
-        setStickyMenu(about.getBoundingClientRect().top <= 0);
-      }
-    };
+    const handleScroll = () => setStickyMenu(window.scrollY >= window.innerHeight);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
