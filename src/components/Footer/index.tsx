@@ -12,7 +12,7 @@ const Footer = () => {
           {/* Logo + copyright */}
           <div className="flex flex-col items-center gap-3 sm:items-start">
             <Link href="/">
-              <div className="relative h-12 w-44 overflow-hidden rounded-md">
+              <div className="relative h-16 w-24 overflow-hidden rounded-md">
                 <Image src="/icon.png" alt="Robert Bicknell Development" fill className="object-cover object-center" />
               </div>
             </Link>
