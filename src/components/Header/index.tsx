@@ -20,14 +20,13 @@ const Header = () => {
   const pathUrl = usePathname();
 
   useEffect(() => {
-    const hero = document.getElementById("hero");
-    if (!hero) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => setStickyMenu(!entry.isIntersecting),
-      { threshold: 0 },
-    );
-    observer.observe(hero);
-    return () => observer.disconnect();
+    const check = () => {
+      const hero = document.getElementById("hero");
+      if (hero) setStickyMenu(hero.getBoundingClientRect().bottom <= 0);
+    };
+    check();
+    window.addEventListener("scroll", check, { passive: true });
+    return () => window.removeEventListener("scroll", check);
   }, []);
 
   return (
