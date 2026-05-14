@@ -22,15 +22,9 @@ const Header = () => {
   useEffect(() => {
     const about = document.getElementById("about");
     if (!about) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        // sticky when About is visible OR has already scrolled above viewport
-        setStickyMenu(entry.isIntersecting || entry.boundingClientRect.top < 0);
-      },
-      { threshold: 0 },
-    );
-    observer.observe(about);
-    return () => observer.disconnect();
+    const check = () => setStickyMenu(about.getBoundingClientRect().top <= 0);
+    window.addEventListener("scroll", check, { passive: true });
+    return () => window.removeEventListener("scroll", check);
   }, []);
 
   return (
