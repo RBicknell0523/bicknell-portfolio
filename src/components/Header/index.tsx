@@ -29,7 +29,7 @@ const Header = () => {
     <header
       className={`fixed left-0 top-0 z-1000 w-full transition-all duration-200 ${
         stickyMenu
-          ? "border-b border-border bg-background/80 py-3 shadow-sm backdrop-blur-lg"
+          ? "border-b border-border bg-background/80 py-1.5 shadow-sm backdrop-blur-lg"
           : "bg-transparent py-5"
       }`}
     >
