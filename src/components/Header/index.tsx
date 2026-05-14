@@ -44,8 +44,15 @@ const Header = () => {
           </div>
         </Link>
 
-        {/* Desktop nav — absolutely centred */}
-        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 lg:flex">
+        {/* Desktop nav — right by default, slides to centre on scroll */}
+        <nav
+          className="absolute hidden items-center gap-1 transition-all duration-300 lg:flex"
+          style={
+            stickyMenu
+              ? { left: "50%", transform: "translateX(-50%)" }
+              : { left: "100%", transform: "translateX(-100%)" }
+          }
+        >
           {menuData.map((menuItem) =>
             menuItem.submenu ? (
               <div key={menuItem.id} className="group relative">
