@@ -38,7 +38,7 @@ const Header = () => {
       <div className="mx-auto flex max-w-[1170px] items-center justify-between px-4 sm:px-8 xl:px-0">
         {/* Logo */}
         <Link href="/">
-          <div className="relative h-20 w-28 overflow-hidden rounded-md">
+          <div className="relative h-32 w-44 overflow-hidden rounded-md">
             <Image src="/icon.png" alt="Robert Bicknell Development" fill className="object-cover object-center" />
           </div>
         </Link>
