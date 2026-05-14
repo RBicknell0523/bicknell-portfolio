@@ -306,7 +306,7 @@ const AnimatedShaderHero: React.FC<HeroProps> = ({
   const canvasRef = useShaderBackground();
 
   return (
-    <div className={`relative w-full h-screen overflow-hidden bg-black ${className}`}>
+    <div id="hero" className={`relative w-full h-screen overflow-hidden bg-black ${className}`}>
       <canvas
         ref={canvasRef}
         className="absolute inset-0 w-full h-full object-fill touch-none"

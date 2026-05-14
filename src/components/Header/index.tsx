@@ -20,9 +20,14 @@ const Header = () => {
   const pathUrl = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => setStickyMenu(window.scrollY >= window.innerHeight);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const hero = document.getElementById("hero");
+    if (!hero) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setStickyMenu(!entry.isIntersecting),
+      { threshold: 0 },
+    );
+    observer.observe(hero);
+    return () => observer.disconnect();
   }, []);
 
   return (
