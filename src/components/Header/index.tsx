@@ -20,13 +20,17 @@ const Header = () => {
   const pathUrl = usePathname();
 
   useEffect(() => {
-    const check = () => {
-      const hero = document.getElementById("hero");
-      if (hero) setStickyMenu(hero.getBoundingClientRect().bottom <= 0);
-    };
-    check();
-    window.addEventListener("scroll", check, { passive: true });
-    return () => window.removeEventListener("scroll", check);
+    const about = document.getElementById("about");
+    if (!about) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // sticky when About is visible OR has already scrolled above viewport
+        setStickyMenu(entry.isIntersecting || entry.boundingClientRect.top < 0);
+      },
+      { threshold: 0 },
+    );
+    observer.observe(about);
+    return () => observer.disconnect();
   }, []);
 
   return (
