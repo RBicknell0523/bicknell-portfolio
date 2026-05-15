@@ -21,8 +21,8 @@ export default function Home() {
         }}
         subtitle="Building reliable, accessible, and scalable web applications — mission-focused from day one."
         buttons={{
-          primary: { text: "View My Work" },
-          secondary: { text: "Get In Touch" },
+          primary: { text: "View My Work", href: "#projects" },
+          secondary: { text: "Get In Touch", href: "#contact" },
         }}
       />
       <About />

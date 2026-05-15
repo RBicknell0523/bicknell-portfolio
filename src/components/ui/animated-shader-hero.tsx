@@ -15,8 +15,8 @@ interface HeroProps {
   };
   subtitle: string;
   buttons?: {
-    primary?: { text: string; onClick?: () => void };
-    secondary?: { text: string; onClick?: () => void };
+    primary?: { text: string; href?: string; onClick?: () => void };
+    secondary?: { text: string; href?: string; onClick?: () => void };
   };
   className?: string;
 }
@@ -377,20 +377,38 @@ const AnimatedShaderHero: React.FC<HeroProps> = ({
           {buttons && (
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-6 sm:mt-10 animate-fade-in-up animation-delay-800">
               {buttons.primary && (
-                <button
-                  onClick={buttons.primary.onClick}
-                  className="px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-black rounded-full font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/25"
-                >
-                  {buttons.primary.text}
-                </button>
+                buttons.primary.href ? (
+                  <a
+                    href={buttons.primary.href}
+                    className="px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-black rounded-full font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/25"
+                  >
+                    {buttons.primary.text}
+                  </a>
+                ) : (
+                  <button
+                    onClick={buttons.primary.onClick}
+                    className="px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-black rounded-full font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/25"
+                  >
+                    {buttons.primary.text}
+                  </button>
+                )
               )}
               {buttons.secondary && (
-                <button
-                  onClick={buttons.secondary.onClick}
-                  className="px-6 py-3 sm:px-8 sm:py-4 bg-orange-500/10 hover:bg-orange-500/20 border border-orange-300/30 hover:border-orange-300/50 text-orange-100 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 backdrop-blur-sm"
-                >
-                  {buttons.secondary.text}
-                </button>
+                buttons.secondary.href ? (
+                  <a
+                    href={buttons.secondary.href}
+                    className="px-6 py-3 sm:px-8 sm:py-4 bg-orange-500/10 hover:bg-orange-500/20 border border-orange-300/30 hover:border-orange-300/50 text-orange-100 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+                  >
+                    {buttons.secondary.text}
+                  </a>
+                ) : (
+                  <button
+                    onClick={buttons.secondary.onClick}
+                    className="px-6 py-3 sm:px-8 sm:py-4 bg-orange-500/10 hover:bg-orange-500/20 border border-orange-300/30 hover:border-orange-300/50 text-orange-100 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+                  >
+                    {buttons.secondary.text}
+                  </button>
+                )
               )}
             </div>
           )}

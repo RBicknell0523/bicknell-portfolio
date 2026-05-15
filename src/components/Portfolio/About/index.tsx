@@ -54,7 +54,7 @@ const About = () => {
 
   return (
     <section id="about" data-animate>
-      <div className="mx-auto max-w-[1170px] px-4 pt-12 pb-24 sm:px-8 xl:px-0">
+      <div className="mx-auto max-w-[1170px] px-4 pt-20 pb-24 sm:px-8 xl:px-0">
 
         {/* Top row: avatar + bio */}
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[auto_1fr]">
