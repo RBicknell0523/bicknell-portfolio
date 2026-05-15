@@ -18,13 +18,14 @@ const Header = () => {
 
   return (
     <>
-      {/* ── Mobile nav bar (always visible, bg appears on scroll) ── */}
+      {/* ── Mobile nav bar ── */}
       <div
-        className={`fixed inset-x-0 top-0 z-[1000] flex items-center justify-between px-4 py-3 lg:hidden transition-all duration-300 bg-background/40 backdrop-blur-sm ${
+        className={`fixed inset-x-0 top-0 z-[1000] flex items-center gap-3 px-4 py-3 lg:hidden transition-all duration-300 bg-background/40 backdrop-blur-sm ${
           stickyMenu ? "border-b border-border/50 shadow-sm" : ""
         }`}
       >
-        <Link href="/" aria-label="Home">
+        {/* Logo */}
+        <Link href="/" aria-label="Home" className="shrink-0">
           <div className="relative h-10 w-10 overflow-hidden rounded-md">
             <Image
               src="/icon.png"
@@ -36,40 +37,39 @@ const Header = () => {
           </div>
         </Link>
 
+        {/* Nav links — slide in from right on open */}
+        <div className="flex-1 overflow-hidden">
+          <nav
+            className="flex items-center justify-end gap-6 transition-all duration-300 ease-in-out"
+            style={{
+              transform: mobileOpen ? "translateX(0)" : "translateX(110%)",
+              opacity: mobileOpen ? 1 : 0,
+            }}
+          >
+            {menuData
+              .filter((item) => !item.submenu)
+              .map((menuItem) => (
+                <a
+                  key={menuItem.id}
+                  href={menuItem.path ?? "#"}
+                  onClick={() => setMobileOpen(false)}
+                  className="whitespace-nowrap text-sm font-semibold tracking-wide text-foreground/80 transition-colors hover:text-primary"
+                >
+                  {menuItem.title}
+                </a>
+              ))}
+          </nav>
+        </div>
+
+        {/* Hamburger */}
         <button
           onClick={() => setMobileOpen((o) => !o)}
-          className="flex h-9 w-9 items-center justify-center rounded-md text-foreground/80 transition-colors hover:text-primary"
+          className="shrink-0 flex h-9 w-9 items-center justify-center rounded-md text-foreground/80 transition-colors hover:text-primary"
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
         >
           {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
-      </div>
-
-      {/* ── Mobile horizontal dropdown ── */}
-      <div
-        className="fixed inset-x-0 top-16 z-[999] lg:hidden bg-transparent transition-all duration-300"
-        style={{
-          opacity: mobileOpen ? 1 : 0,
-          transform: mobileOpen ? "translateY(0)" : "translateY(-6px)",
-          pointerEvents: mobileOpen ? "auto" : "none",
-        }}
-        aria-hidden={!mobileOpen}
-      >
-        <nav className="flex flex-wrap items-center justify-center gap-4 py-4 px-6">
-          {menuData
-            .filter((item) => !item.submenu)
-            .map((menuItem) => (
-              <a
-                key={menuItem.id}
-                href={menuItem.path ?? "#"}
-                onClick={() => setMobileOpen(false)}
-                className="text-sm font-semibold tracking-wide text-foreground/80 transition-colors hover:text-primary"
-              >
-                {menuItem.title}
-              </a>
-            ))}
-        </nav>
       </div>
 
       {/* ── Desktop header ── */}
