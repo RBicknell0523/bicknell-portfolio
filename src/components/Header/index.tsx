@@ -20,10 +20,8 @@ const Header = () => {
     <>
       {/* ── Mobile nav bar (always visible, bg appears on scroll) ── */}
       <div
-        className={`fixed inset-x-0 top-0 z-[1000] flex items-center justify-between px-4 py-3 lg:hidden transition-all duration-300 ${
-          stickyMenu
-            ? "border-b border-border bg-background/80 shadow-sm backdrop-blur-lg"
-            : "bg-transparent"
+        className={`fixed inset-x-0 top-0 z-[1000] flex items-center justify-between px-4 py-3 lg:hidden transition-all duration-300 bg-background/40 backdrop-blur-sm ${
+          stickyMenu ? "border-b border-border/50 shadow-sm" : ""
         }`}
       >
         <Link href="/" aria-label="Home">
@@ -50,7 +48,7 @@ const Header = () => {
 
       {/* ── Mobile horizontal dropdown ── */}
       <div
-        className="fixed inset-x-0 top-16 z-[999] lg:hidden border-b border-border/20 bg-transparent backdrop-blur-md transition-all duration-300"
+        className="fixed inset-x-0 top-16 z-[999] lg:hidden bg-transparent transition-all duration-300"
         style={{
           opacity: mobileOpen ? 1 : 0,
           transform: mobileOpen ? "translateY(0)" : "translateY(-6px)",
