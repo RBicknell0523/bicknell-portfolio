@@ -85,7 +85,7 @@ const About = () => {
           <div className="text-center lg:text-left">
             <div className="mb-4 h-12">
               <GooeyText
-                texts={["About Me", "My Story", "Who I Am", "Army Veteran"]}
+                texts={["About Me", "My Story", "Who I Am"]}
                 morphTime={1}
                 cooldownTime={2.5}
                 innerClassName="justify-center lg:justify-start"
