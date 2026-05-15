@@ -93,13 +93,15 @@ const About = () => {
                 textClassName="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent"
               />
             </div>
-            <p className="mb-6 max-w-[600px] leading-relaxed text-foreground/75 lg:mx-0 mx-auto">
-              I&apos;m a full stack web developer and seven-year U.S. Army veteran. My military
-              career built disciplined execution, calm decision-making under pressure, and a proven
-              record of leading teams and managing high-stakes responsibilities. Now I apply that
-              same mission-focus to web development — trained in front-end and back-end through
-              ERA Academy, I build reliable, accessible, and scalable applications.
-            </p>
+            <div className="mb-6 max-w-[600px] lg:mx-0 mx-auto rounded-xl border border-border/60 bg-card/80 backdrop-blur-sm px-4 py-3">
+              <p className="leading-relaxed text-foreground/75">
+                I&apos;m a full stack web developer and seven-year U.S. Army veteran. My military
+                career built disciplined execution, calm decision-making under pressure, and a proven
+                record of leading teams and managing high-stakes responsibilities. Now I apply that
+                same mission-focus to web development — trained in front-end and back-end through
+                ERA Academy, I build reliable, accessible, and scalable applications.
+              </p>
+            </div>
 
             {/* Tab toggle */}
             <div className="mb-4 flex justify-center gap-2 lg:justify-start">

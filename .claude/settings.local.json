@@ -1,13 +1,16 @@
 {
   "permissions": {
-    "defaultMode": "bypassPermissions",
     "allow": [
       "Bash(git add *)",
       "Bash(git commit *)",
       "Bash(npx tsc *)",
-      "WebFetch(domain:github.com)"
-    ]
+      "WebFetch(domain:github.com)",
+      "Bash(git push *)"
+    ],
+    "defaultMode": "bypassPermissions"
   },
   "enableAllProjectMcpServers": true,
-  "enabledMcpjsonServers": ["shadcn"]
+  "enabledMcpjsonServers": [
+    "shadcn"
+  ]
 }

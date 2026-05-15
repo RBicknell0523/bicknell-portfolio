@@ -60,11 +60,13 @@ const Contact = () => {
                 textClassName="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent"
               />
             </div>
-            <p className="mb-8 max-w-[420px] leading-relaxed text-foreground/75">
-              I&apos;m open to new opportunities, collaborations, or just a friendly
-              chat. Send me a message and I&apos;ll get back to you as soon as
-              possible.
-            </p>
+            <div className="mb-8 max-w-[420px] rounded-xl border border-border/60 bg-card/80 backdrop-blur-sm px-4 py-3">
+              <p className="leading-relaxed text-foreground/75">
+                I&apos;m open to new opportunities, collaborations, or just a friendly
+                chat. Send me a message and I&apos;ll get back to you as soon as
+                possible.
+              </p>
+            </div>
 
             <div className="mb-8 flex flex-col items-center gap-3 lg:items-start">
               <a

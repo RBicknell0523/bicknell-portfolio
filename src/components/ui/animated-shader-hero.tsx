@@ -343,11 +343,11 @@ const AnimatedShaderHero: React.FC<HeroProps> = ({
         <div className="text-center space-y-4 sm:space-y-6 max-w-5xl mx-auto px-4">
           <div className="space-y-1 sm:space-y-2">
             {greeting && (
-              <p className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent animate-fade-in-up animation-delay-100">
+              <p className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent animate-fade-in-up animation-delay-100 drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
                 {greeting}
               </p>
             )}
-            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold bg-[linear-gradient(to_right,white,#fb923c,#3b82f6,#22c55e)] bg-clip-text text-transparent animate-fade-in-up animation-delay-200">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold bg-[linear-gradient(to_right,white,#fb923c,#3b82f6,#22c55e)] bg-clip-text text-transparent animate-fade-in-up animation-delay-200 drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]">
               {headline.line1}
             </h1>
             {headline.line2Texts ? (
@@ -357,7 +357,7 @@ const AnimatedShaderHero: React.FC<HeroProps> = ({
                   morphTime={1}
                   cooldownTime={2.5}
                   centered
-                  className="h-full"
+                  className="h-full drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]"
                   textClassName="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent"
                 />
               </div>
@@ -369,7 +369,7 @@ const AnimatedShaderHero: React.FC<HeroProps> = ({
           </div>
 
           <div className="max-w-3xl mx-auto animate-fade-in-up animation-delay-600">
-            <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-orange-100/90 font-light leading-relaxed px-2">
+            <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-orange-100/90 font-light leading-relaxed px-2 drop-shadow-[0_1px_6px_rgba(0,0,0,0.9)]">
               {subtitle}
             </p>
           </div>

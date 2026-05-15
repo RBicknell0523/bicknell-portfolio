@@ -70,9 +70,11 @@ const Projects = () => {
           </div>
 
           <div className="mb-4 flex flex-col items-center gap-3 lg:mb-8 lg:flex-row lg:items-end lg:justify-between">
-            <p className="text-center text-sm text-foreground/75 lg:text-left lg:text-base lg:max-w-[480px]">
-              A selection of things I&apos;ve built. Each one taught me something new.
-            </p>
+            <div className="rounded-xl border border-border/60 bg-card/80 backdrop-blur-sm px-4 py-3 text-center lg:text-left lg:max-w-[480px]">
+              <p className="text-sm text-foreground/75 lg:text-base">
+                A selection of things I&apos;ve built. Each one taught me something new.
+              </p>
+            </div>
             <div className="flex gap-2">
               <button
                 onClick={() => swiperRef.current?.slidePrev()}
