@@ -40,7 +40,7 @@ const Header = () => {
         {/* Nav links — slide in from right on open */}
         <div className="flex-1 overflow-hidden">
           <nav
-            className="flex items-center justify-end gap-6 transition-all duration-300 ease-in-out"
+            className="flex items-center justify-center gap-6 transition-all duration-300 ease-in-out"
             style={{
               transform: mobileOpen ? "translateX(0)" : "translateX(110%)",
               opacity: mobileOpen ? 1 : 0,
