@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import menuData from "./menuData";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -9,7 +8,6 @@ import { Menu, X, ChevronDown } from "lucide-react";
 const Header = () => {
   const [stickyMenu, setStickyMenu] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const pathUrl = usePathname();
 
   useEffect(() => {
     const check = () => setStickyMenu(window.scrollY > 50);
@@ -68,9 +66,7 @@ const Header = () => {
                 key={menuItem.id}
                 href={menuItem.path ?? "#"}
                 onClick={() => setMobileOpen(false)}
-                className={`text-sm font-semibold tracking-wide transition-colors hover:text-primary ${
-                  pathUrl === menuItem.path ? "text-primary" : "text-foreground/80"
-                }`}
+                className="text-sm font-semibold tracking-wide text-foreground/80 transition-colors hover:text-primary"
               >
                 {menuItem.title}
               </Link>
@@ -121,11 +117,7 @@ const Header = () => {
               menuItem.submenu ? (
                 <div key={menuItem.id} className="group relative">
                   <button
-                    className={`flex items-center gap-1 rounded-md border px-3 py-2 text-lg font-medium transition-all duration-200 hover:border-primary hover:bg-primary/10 hover:text-primary ${
-                      pathUrl === menuItem.path
-                        ? "border-primary text-primary"
-                        : "border-border/50 text-foreground"
-                    }`}
+                    className="flex items-center gap-1 rounded-md border border-border/50 px-3 py-2 text-lg font-medium text-foreground transition-all duration-200 hover:border-primary hover:bg-primary/10 hover:text-primary"
                   >
                     {menuItem.title}
                     <ChevronDown className="h-3 w-3 transition-transform group-hover:rotate-180" />
@@ -146,11 +138,7 @@ const Header = () => {
                 <Link
                   key={menuItem.id}
                   href={menuItem.path ?? "#"}
-                  className={`rounded-md border px-3 py-2 text-lg font-medium transition-all duration-200 hover:border-primary hover:bg-primary/10 hover:text-primary ${
-                    pathUrl === menuItem.path
-                      ? "border-primary text-primary"
-                      : "border-border/50 text-foreground"
-                  }`}
+                  className="rounded-md border border-border/50 px-3 py-2 text-lg font-medium text-foreground transition-all duration-200 hover:border-primary hover:bg-primary/10 hover:text-primary"
                 >
                   {menuItem.title}
                 </Link>
