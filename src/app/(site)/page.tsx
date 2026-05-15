@@ -1,7 +1,7 @@
 import About from "@/components/Portfolio/About";
 import Contact from "@/components/Portfolio/Contact";
 import Projects from "@/components/Portfolio/Projects";
-import ShaderHeroSection from "@/components/Home/Hero/ShaderHeroSection";
+import AnimatedShaderHero from "@/components/ui/animated-shader-hero";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,7 +12,19 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <ShaderHeroSection />
+      <AnimatedShaderHero
+        greeting="Hi, I'm"
+        headline={{
+          line1: "Robert Bicknell",
+          line2Texts: ["Full Stack Developer", "Army Veteran", "Problem Solver", "Leader"],
+          line2: "Full Stack Developer",
+        }}
+        subtitle="Building reliable, accessible, and scalable web applications — mission-focused from day one."
+        buttons={{
+          primary: { text: "View My Work" },
+          secondary: { text: "Get In Touch" },
+        }}
+      />
       <About />
       <Projects />
       <Contact />

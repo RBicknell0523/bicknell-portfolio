@@ -678,6 +678,13 @@
 @layer base {
   html {
     @apply scroll-smooth;
+    scroll-padding-top: 64px; /* always-visible mobile nav height */
+  }
+
+  @media (min-width: 1024px) {
+    html {
+      scroll-padding-top: 96px; /* desktop sticky header height */
+    }
   }
 
   html.sr {
@@ -733,6 +740,7 @@
   animation: gradient-shift 3s ease infinite;
 }
 
+.animation-delay-100 { animation-delay: 0.1s; }
 .animation-delay-200 { animation-delay: 0.2s; }
 .animation-delay-400 { animation-delay: 0.4s; }
 .animation-delay-600 { animation-delay: 0.6s; }
@@ -845,13 +853,9 @@ pre {
 }
 
 select {
-  appearance: none; /* Remove default arrow appearance */
+  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background: url('/images/ai-tools/icon-5.svg') no-repeat; 
-  background-position: 95% center; 
-  background-size: 16px 16px; 
-  padding-right: 20px;
 }
 
 option {
@@ -864,4 +868,23 @@ textarea {
 
 .generated-content-container p {
   @apply mt-2
+}
+
+.projects-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+.projects-swiper .swiper-slide {
+  height: auto;
+}
+
+/* Scroll-reveal base state */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-animate].in-view {
+  opacity: 1;
+  transform: translateY(0);
 }

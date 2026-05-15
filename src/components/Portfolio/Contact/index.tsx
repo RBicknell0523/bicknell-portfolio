@@ -5,44 +5,62 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { GooeyText } from "@/components/ui/gooey-text-morphing";
 
 const Contact = () => {
   return (
     <section
       id="contact"
       data-animate
-      className="bg-card"
     >
       <div className="mx-auto max-w-[1170px] px-4 py-24 sm:px-8 xl:px-0">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
 
           {/* Left: intro + links */}
-          <div>
-            <h2 className="mb-4 text-3xl font-extrabold text-foreground sm:text-4xl">
-              Get In Touch
-            </h2>
-            <p className="mb-8 max-w-[420px] leading-relaxed text-muted-foreground">
+          <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+            <div className="mb-4 h-12 w-full">
+              <GooeyText
+                texts={["Get In Touch", "Let's Talk", "Say Hello", "Work With Me"]}
+                morphTime={1}
+                cooldownTime={2.5}
+                innerClassName="justify-center lg:justify-start"
+                className="h-full"
+                textClassName="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent"
+              />
+            </div>
+            <p className="mb-8 max-w-[420px] leading-relaxed text-foreground/75">
               I&apos;m open to new opportunities, collaborations, or just a friendly
               chat. Send me a message and I&apos;ll get back to you as soon as
               possible.
             </p>
 
-            <a
-              href="mailto:rbicknell0723@gmail.com"
-              className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary"
-            >
-              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect width="20" height="16" x="2" y="4" rx="2" />
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-              </svg>
-              rbicknell0723@gmail.com
-            </a>
+            <div className="mb-8 flex flex-col items-center gap-3 lg:items-start">
+              <a
+                href="mailto:rbicknell0723@gmail.com"
+                className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary"
+              >
+                <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect width="20" height="16" x="2" y="4" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+                rbicknell0723@gmail.com
+              </a>
+              <a
+                href="tel:+19513105226"
+                className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary"
+              >
+                <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.6a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.6a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                (951) 310-5226
+              </a>
+            </div>
 
-            <div className="flex gap-2">
+            <div className="flex justify-center gap-2 lg:justify-start">
               {/* GitHub */}
               <Button variant="ghost" size="icon" asChild>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/RBicknell0523"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"
@@ -55,7 +73,7 @@ const Contact = () => {
               {/* LinkedIn */}
               <Button variant="ghost" size="icon" asChild>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/robert-bicknell-81b04440b/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
@@ -65,24 +83,11 @@ const Contact = () => {
                   </svg>
                 </a>
               </Button>
-              {/* Twitter / X */}
-              <Button variant="ghost" size="icon" asChild>
-                <a
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Twitter"
-                >
-                  <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.258 5.635 5.906-5.635zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" />
-                  </svg>
-                </a>
-              </Button>
             </div>
           </div>
 
           {/* Right: contact form */}
-          <Card>
+          <Card className="border-border/60 bg-card/80 backdrop-blur-sm">
             <CardContent className="p-6">
               <form className="flex flex-col gap-5" onSubmit={(e) => e.preventDefault()}>
                 <div className="flex flex-col gap-2">
