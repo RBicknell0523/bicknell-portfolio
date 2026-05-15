@@ -50,7 +50,7 @@ const Header = () => {
 
       {/* ── Mobile horizontal dropdown ── */}
       <div
-        className="fixed inset-x-0 top-16 z-[999] lg:hidden border-b border-border/30 bg-background/60 backdrop-blur-xl transition-all duration-300"
+        className="fixed inset-x-0 top-16 z-[999] lg:hidden border-b border-border/20 bg-transparent backdrop-blur-md transition-all duration-300"
         style={{
           opacity: mobileOpen ? 1 : 0,
           transform: mobileOpen ? "translateY(0)" : "translateY(-6px)",
