@@ -62,7 +62,7 @@ const About = () => {
           {/* Left: avatar + social links */}
           <div className="flex flex-col items-center gap-5 lg:items-start">
             <div className="relative h-72 w-52 sm:h-96 sm:w-64 overflow-hidden rounded-xl border-2 border-border">
-              <Image src="/images/about/avatar.png" alt="Robert Bicknell" fill sizes="256px" className="object-cover object-top" />
+              <Image src="/images/about/avatar.png" alt="Robert Bicknell" fill sizes="(max-width: 640px) 208px, 256px" className="object-cover object-top" />
             </div>
 
             <div className="flex gap-3">
@@ -93,7 +93,7 @@ const About = () => {
                 textClassName="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent"
               />
             </div>
-            <div className="mb-6 max-w-[600px] lg:mx-0 mx-auto rounded-xl border border-border/60 bg-card/80 backdrop-blur-sm px-4 py-3">
+            <div className="mb-6 max-w-[600px] lg:mx-0 mx-auto glass-card px-4 py-3">
               <p className="leading-relaxed text-foreground/75">
                 I&apos;m a full stack web developer and seven-year U.S. Army veteran. My military
                 career built disciplined execution, calm decision-making under pressure, and a proven
@@ -163,11 +163,11 @@ const About = () => {
 
         {/* Divider */}
         <div className="my-14 flex items-center gap-4">
-          <div className="h-px flex-1 bg-border" />
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent to-primary/30" />
           <span className="text-xs font-semibold uppercase tracking-widest text-foreground/40">
             Experience &amp; Education
           </span>
-          <div className="h-px flex-1 bg-border" />
+          <div className="h-px flex-1 bg-gradient-to-l from-transparent to-primary/30" />
         </div>
 
         {/* Experience + Education cards */}

@@ -58,7 +58,7 @@ const Header = () => {
         }}
         aria-hidden={!mobileOpen}
       >
-        <nav className="flex items-center justify-center gap-8 py-4 px-6">
+        <nav className="flex flex-wrap items-center justify-center gap-4 py-4 px-6">
           {menuData
             .filter((item) => !item.submenu)
             .map((menuItem) => (
@@ -106,7 +106,7 @@ const Header = () => {
 
           {/* Nav — slides to center when sticky */}
           <nav
-            className="absolute flex items-center gap-1 transition-all duration-500"
+            className="absolute flex items-center gap-1 transition-all duration-500 will-change-transform"
             style={
               stickyMenu
                 ? { left: "50%", transform: "translateX(-50%)" }
@@ -116,7 +116,7 @@ const Header = () => {
             {menuData.map((menuItem) =>
               menuItem.submenu ? (
                 <div key={menuItem.id} className="group relative">
-                  <button className="flex items-center gap-1 rounded-md border border-border/50 px-3 py-2 text-lg font-medium text-foreground transition-all duration-200 hover:border-primary hover:bg-primary/10 hover:text-primary">
+                  <button className="flex items-center gap-1 rounded-md border border-border/50 px-3 py-2 text-base font-medium text-foreground transition-all duration-200 hover:border-primary hover:bg-primary/10 hover:text-primary">
                     {menuItem.title}
                     <ChevronDown className="h-3 w-3 transition-transform group-hover:rotate-180" />
                   </button>
@@ -136,7 +136,7 @@ const Header = () => {
                 <a
                   key={menuItem.id}
                   href={menuItem.path ?? "#"}
-                  className="rounded-md border border-border/50 px-3 py-2 text-lg font-medium text-foreground transition-all duration-200 hover:border-primary hover:bg-primary/10 hover:text-primary"
+                  className="rounded-md border border-border/50 px-3 py-2 text-base font-medium text-foreground transition-all duration-200 hover:border-primary hover:bg-primary/10 hover:text-primary"
                 >
                   {menuItem.title}
                 </a>

@@ -32,7 +32,6 @@ function BentoGrid({ items, className }: BentoGridProps) {
               "border border-border/60 bg-card/80 backdrop-blur-sm",
               "hover:shadow-[0_4px_24px_rgba(0,0,0,0.3)]",
               "hover:-translate-y-0.5 will-change-transform",
-              item.colSpan === 2 ? "md:col-span-2" : "col-span-1",
               item.hasPersistentHover && "shadow-[0_4px_24px_rgba(0,0,0,0.3)] -translate-y-0.5",
               item.href && "cursor-pointer",
             )}

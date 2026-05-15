@@ -15,40 +15,42 @@ const DESKTOP_BREAKPOINT = 1024;
 const Projects = () => {
   const swiperRef = useRef<SwiperClass | null>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const transitioning = useRef(false);
 
   useEffect(() => {
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
 
-    const DURATION = 700;
+    const cached = { totalScrollable: 0, isDesktop: false };
+    let prevProgress = -1;
+
+    const updateCache = () => {
+      cached.totalScrollable = wrapper.offsetHeight - window.innerHeight;
+      cached.isDesktop = window.innerWidth >= DESKTOP_BREAKPOINT;
+    };
+    updateCache();
+
+    const ro = new ResizeObserver(updateCache);
+    ro.observe(wrapper);
+    window.addEventListener("resize", updateCache);
 
     const handleScroll = () => {
-      if (window.innerWidth < DESKTOP_BREAKPOINT) return;
+      if (!cached.isDesktop) return;
       const swiper = swiperRef.current;
-      if (!swiper || transitioning.current) return;
+      if (!swiper) return;
 
-      const rect = wrapper.getBoundingClientRect();
-      const totalScrollable = wrapper.offsetHeight - window.innerHeight;
-      const scrolled = -rect.top;
-
-      if (scrolled <= 0 || scrolled >= totalScrollable) return;
-
-      const progress = scrolled / totalScrollable;
-      const slideIndex = Math.min(
-        projects.length - 1,
-        Math.round(progress * (projects.length - 1)),
-      );
-
-      if (swiper.activeIndex !== slideIndex) {
-        transitioning.current = true;
-        swiper.slideTo(slideIndex, DURATION);
-        setTimeout(() => { transitioning.current = false; }, DURATION);
-      }
+      const scrolled = -wrapper.getBoundingClientRect().top;
+      const progress = Math.max(0, Math.min(1, scrolled / cached.totalScrollable));
+      if (progress === prevProgress) return;
+      prevProgress = progress;
+      swiper.setProgress(progress, 200);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", updateCache);
+      ro.disconnect();
+    };
   }, []);
 
   return (
@@ -70,7 +72,7 @@ const Projects = () => {
           </div>
 
           <div className="mb-4 flex flex-col items-center gap-3 lg:mb-8 lg:flex-row lg:items-end lg:justify-between">
-            <div className="rounded-xl border border-border/60 bg-card/80 backdrop-blur-sm px-4 py-3 text-center lg:text-left lg:max-w-[480px]">
+            <div className="w-full glass-card px-4 py-3 text-center lg:text-left md:max-w-[480px]">
               <p className="text-sm text-foreground/75 lg:text-base">
                 A selection of things I&apos;ve built. Each one taught me something new.
               </p>
@@ -117,7 +119,7 @@ const Projects = () => {
 
               return (
                 <SwiperSlide key={i}>
-                  <div className="group relative flex flex-col overflow-hidden rounded-xl border border-border/60 bg-card/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
+                  <div className="group relative flex flex-col overflow-hidden glass-card transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_24px_rgba(0,0,0,0.4)] will-change-transform">
 
                     {/* Hover overlay */}
                     <a

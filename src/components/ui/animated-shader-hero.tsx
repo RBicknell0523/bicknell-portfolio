@@ -311,7 +311,7 @@ const AnimatedShaderHero: React.FC<HeroProps> = ({
   const canvasRef = useShaderBackground();
 
   return (
-    <div id="hero" className={`relative w-full h-screen ${className}`}>
+    <div id="hero" className={`relative w-full min-h-[100svh] ${className}`}>
       <canvas
         ref={canvasRef}
         className="fixed inset-0 w-full h-full touch-none"
@@ -362,7 +362,7 @@ const AnimatedShaderHero: React.FC<HeroProps> = ({
                 />
               </div>
             ) : (
-              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-yellow-300 via-orange-400 to-red-400 bg-clip-text text-transparent animate-fade-in-up animation-delay-400">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-yellow-300 via-orange-400 to-red-400 bg-clip-text text-transparent animate-fade-in-up animation-delay-400 drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
                 {headline.line2}
               </h1>
             )}
@@ -380,7 +380,7 @@ const AnimatedShaderHero: React.FC<HeroProps> = ({
                 buttons.primary.href ? (
                   <a
                     href={buttons.primary.href}
-                    className="px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-black rounded-full font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/25"
+                    className="px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-black rounded-full font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/25 will-change-transform"
                   >
                     {buttons.primary.text}
                   </a>
@@ -397,7 +397,7 @@ const AnimatedShaderHero: React.FC<HeroProps> = ({
                 buttons.secondary.href ? (
                   <a
                     href={buttons.secondary.href}
-                    className="px-6 py-3 sm:px-8 sm:py-4 bg-orange-500/10 hover:bg-orange-500/20 border border-orange-300/30 hover:border-orange-300/50 text-orange-100 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+                    className="px-6 py-3 sm:px-8 sm:py-4 bg-orange-500/10 hover:bg-orange-500/20 border border-orange-300/30 hover:border-orange-300/50 text-orange-100 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 backdrop-blur-sm will-change-transform"
                   >
                     {buttons.secondary.text}
                   </a>
