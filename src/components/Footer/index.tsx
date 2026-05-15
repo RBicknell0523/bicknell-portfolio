@@ -23,24 +23,9 @@ const Footer = () => {
 
           {/* Anchor nav */}
           <nav className="flex items-center gap-6">
-            <Link
-              href="#about"
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              About
-            </Link>
-            <Link
-              href="#projects"
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              Projects
-            </Link>
-            <Link
-              href="#contact"
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              Contact
-            </Link>
+            <a href="#about" className="text-sm text-muted-foreground transition-colors hover:text-foreground">About</a>
+            <a href="#projects" className="text-sm text-muted-foreground transition-colors hover:text-foreground">Projects</a>
+            <a href="#contact" className="text-sm text-muted-foreground transition-colors hover:text-foreground">Contact</a>
           </nav>
 
           {/* Social icons — replace href="#" with your profile URLs */}

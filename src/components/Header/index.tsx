@@ -62,14 +62,14 @@ const Header = () => {
           {menuData
             .filter((item) => !item.submenu)
             .map((menuItem) => (
-              <Link
+              <a
                 key={menuItem.id}
                 href={menuItem.path ?? "#"}
                 onClick={() => setMobileOpen(false)}
                 className="text-sm font-semibold tracking-wide text-foreground/80 transition-colors hover:text-primary"
               >
                 {menuItem.title}
-              </Link>
+              </a>
             ))}
         </nav>
       </div>
@@ -116,32 +116,30 @@ const Header = () => {
             {menuData.map((menuItem) =>
               menuItem.submenu ? (
                 <div key={menuItem.id} className="group relative">
-                  <button
-                    className="flex items-center gap-1 rounded-md border border-border/50 px-3 py-2 text-lg font-medium text-foreground transition-all duration-200 hover:border-primary hover:bg-primary/10 hover:text-primary"
-                  >
+                  <button className="flex items-center gap-1 rounded-md border border-border/50 px-3 py-2 text-lg font-medium text-foreground transition-all duration-200 hover:border-primary hover:bg-primary/10 hover:text-primary">
                     {menuItem.title}
                     <ChevronDown className="h-3 w-3 transition-transform group-hover:rotate-180" />
                   </button>
                   <div className="invisible absolute left-0 top-full z-50 mt-1 min-w-[200px] rounded-lg border border-border bg-card p-1 opacity-0 shadow-lg transition-all group-hover:visible group-hover:opacity-100">
                     {menuItem.submenu.map((item) => (
-                      <Link
+                      <a
                         key={item.id}
                         href={item.path || "#"}
                         className="block rounded-md px-3 py-2 text-sm text-foreground/70 transition-colors hover:bg-accent hover:text-foreground"
                       >
                         {item.title}
-                      </Link>
+                      </a>
                     ))}
                   </div>
                 </div>
               ) : (
-                <Link
+                <a
                   key={menuItem.id}
                   href={menuItem.path ?? "#"}
                   className="rounded-md border border-border/50 px-3 py-2 text-lg font-medium text-foreground transition-all duration-200 hover:border-primary hover:bg-primary/10 hover:text-primary"
                 >
                   {menuItem.title}
-                </Link>
+                </a>
               ),
             )}
           </nav>
