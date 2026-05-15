@@ -95,9 +95,9 @@ const About = () => {
             </div>
             <div className="mb-6 max-w-[600px] lg:mx-0 mx-auto glass-card px-4 py-3">
               <p className="leading-relaxed text-foreground/75">
-                I&apos;m a full stack web developer and seven-year U.S. Army veteran. My military
+                I'm a certified full stack web developer and seven-year U.S. Army veteran. My military
                 career built disciplined execution, calm decision-making under pressure, and a proven
-                record of leading teams and managing high-stakes responsibilities. Now I apply that
+                record of leading teams and leading high-stakes responsibilities. Now I apply that
                 same mission-focus to web development — trained in front-end and back-end through
                 ERA Academy, I build reliable, accessible, and scalable applications.
               </p>
