@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -7,7 +8,38 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { GooeyText } from "@/components/ui/gooey-text-morphing";
 
+type Status = "idle" | "sending" | "success" | "error";
+
 const Contact = () => {
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus("sending");
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error ?? "Unknown error");
+      setStatus("success");
+      form.reset();
+    } catch (err) {
+      setErrorMsg(err instanceof Error ? err.message : "Something went wrong.");
+      setStatus("error");
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -89,29 +121,47 @@ const Contact = () => {
           {/* Right: contact form */}
           <Card className="border-border/60 bg-card/80 backdrop-blur-sm">
             <CardContent className="p-6">
-              <form className="flex flex-col gap-5" onSubmit={(e) => e.preventDefault()}>
-                <div className="flex flex-col gap-2">
-                  <Label htmlFor="name">Name</Label>
-                  <Input id="name" name="name" placeholder="Your name" required />
+              {status === "success" ? (
+                <div className="flex flex-col items-center justify-center gap-4 py-12 text-center">
+                  <svg className="h-12 w-12 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" />
+                  </svg>
+                  <p className="text-lg font-semibold text-foreground">Message sent!</p>
+                  <p className="text-sm text-muted-foreground">I&apos;ll get back to you as soon as possible.</p>
+                  <Button variant="outline" size="sm" onClick={() => setStatus("idle")}>
+                    Send another
+                  </Button>
                 </div>
-                <div className="flex flex-col gap-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" name="email" type="email" placeholder="your@email.com" required />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    placeholder="What's on your mind?"
-                    className="min-h-[140px]"
-                    required
-                  />
-                </div>
-                <Button type="submit" className="w-full">
-                  Send Message
-                </Button>
-              </form>
+              ) : (
+                <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
+                  <div className="flex flex-col gap-2">
+                    <Label htmlFor="name">Name</Label>
+                    <Input id="name" name="name" placeholder="Your name" required disabled={status === "sending"} />
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <Label htmlFor="email">Email</Label>
+                    <Input id="email" name="email" type="email" placeholder="your@email.com" required disabled={status === "sending"} />
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <Label htmlFor="message">Message</Label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      placeholder="What's on your mind?"
+                      className="min-h-[140px]"
+                      required
+                      disabled={status === "sending"}
+                    />
+                  </div>
+                  {status === "error" && (
+                    <p className="text-sm text-destructive">{errorMsg}</p>
+                  )}
+                  <Button type="submit" className="w-full" disabled={status === "sending"}>
+                    {status === "sending" ? "Sending…" : "Send Message"}
+                  </Button>
+                </form>
+              )}
             </CardContent>
           </Card>
 
