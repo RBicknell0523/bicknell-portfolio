@@ -62,8 +62,8 @@ const Contact = () => {
             </div>
             <div className="mb-8 w-full max-w-[420px] glass-card px-4 py-3">
               <p className="leading-relaxed text-foreground/75">
-                I&apos;m open to new opportunities, collaborations, or just a friendly
-                chat. Send me a message and I&apos;ll get back to you as soon as
+                I'm open to new opportunities, collaborations, or just a friendly
+                chat. Send me a message and I'll get back to you as soon as
                 possible.
               </p>
             </div>
@@ -126,7 +126,7 @@ const Contact = () => {
                     <polyline points="22 4 12 14.01 9 11.01" />
                   </svg>
                   <p className="text-lg font-semibold text-foreground">Message sent!</p>
-                  <p className="text-sm text-muted-foreground">I&apos;ll get back to you as soon as possible.</p>
+                  <p className="text-sm text-muted-foreground">I'll get back to you as soon as possible.</p>
                   <Button variant="outline" size="sm" onClick={() => setStatus("idle")}>
                     Send another
                   </Button>
