@@ -310,7 +310,7 @@ function useShaderBackground() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const isMobile = window.matchMedia("(pointer: coarse)").matches;
+    const isMobile = window.matchMedia("(pointer: coarse) and (hover: none)").matches;
     const dpr = isMobile
       ? Math.min(0.75, 0.5 * window.devicePixelRatio)
       : Math.max(1, 0.5 * window.devicePixelRatio);
