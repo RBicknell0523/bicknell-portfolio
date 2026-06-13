@@ -61,14 +61,19 @@ const Projects = () => {
       >
         <div className="mx-auto w-full max-w-[1170px] px-4 sm:px-8 xl:px-0">
           <div className="mb-2 h-12 lg:mb-3">
-            <GooeyText
-              texts={["Projects", "My Work", "What I Build"]}
-              morphTime={1}
-              cooldownTime={2.5}
-              innerClassName="justify-center lg:justify-start"
-              className="h-full"
-              textClassName="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent"
-            />
+            <span className="md:hidden flex items-center justify-center lg:justify-start h-full text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent">
+              Projects
+            </span>
+            <div className="hidden md:block h-full">
+              <GooeyText
+                texts={["Projects", "My Work", "What I Build"]}
+                morphTime={1}
+                cooldownTime={2.5}
+                innerClassName="justify-center lg:justify-start"
+                className="h-full"
+                textClassName="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent"
+              />
+            </div>
           </div>
 
           <div className="mb-4 flex flex-col items-center gap-3 lg:mb-8 lg:flex-row lg:items-end lg:justify-between">
