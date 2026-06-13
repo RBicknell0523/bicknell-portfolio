@@ -7,7 +7,7 @@ const Projects = dynamic(() => import("@/components/Portfolio/Projects"), { load
 const Contact  = dynamic(() => import("@/components/Portfolio/Contact"),  { loading: () => <div className="min-h-[600px]" /> });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  metadataBase: new URL("https://robert-bicknell.com"),
   title: "Robert Bicknell — Full Stack Developer",
   description: "Personal portfolio of Robert Bicknell, a certified full stack web developer and U.S. Army veteran building reliable, accessible, and scalable web applications.",
   openGraph: {
