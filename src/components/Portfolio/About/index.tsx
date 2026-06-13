@@ -131,7 +131,7 @@ const About = () => {
 
           {/* Right: bio + toggled content */}
           <div className='text-center lg:text-left'>
-            <div className='mb-4 h-12'>
+            <div className='mb-4 h-12 overflow-hidden'>
               <MobileTextCycler
                 texts={['About Me', 'My Story', 'Who I Am']}
                 className='md:hidden flex items-center justify-center lg:justify-start h-full text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent'

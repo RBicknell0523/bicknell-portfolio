@@ -254,6 +254,7 @@ function useShaderBackground() {
   const rafRef = useRef<number | null>(null);
   const rendererRef = useRef<WebGLRenderer | null>(null);
   const pointersRef = useRef<PointerHandler | null>(null);
+  const lastFrameRef = useRef(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -272,6 +273,9 @@ function useShaderBackground() {
     };
 
     const loop = (now: number) => {
+      rafRef.current = requestAnimationFrame(loop);
+      if (now - lastFrameRef.current < 32) return;
+      lastFrameRef.current = now;
       const r = rendererRef.current;
       const p = pointersRef.current;
       if (!r || !p) return;
@@ -280,7 +284,6 @@ function useShaderBackground() {
       r.updatePointerCoords(p.coords);
       r.updateMove(p.move);
       r.render(now);
-      rafRef.current = requestAnimationFrame(loop);
     };
 
     rendererRef.current = new WebGLRenderer(canvas, dpr);
@@ -363,7 +366,7 @@ const AnimatedShaderHero: React.FC<HeroProps> = ({
               {headline.line1}
             </h1>
             {headline.line2Texts ? (
-              <div className="h-10 sm:h-14 md:h-20 lg:h-24 animate-fade-in-up animation-delay-400">
+              <div className="h-10 sm:h-14 md:h-20 lg:h-24 animate-fade-in-up animation-delay-400 overflow-hidden">
                 <MobileTextCycler
                   texts={headline.line2Texts}
                   className="md:hidden flex items-center justify-center h-full text-2xl sm:text-4xl font-bold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]"

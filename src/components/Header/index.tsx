@@ -20,8 +20,10 @@ const Header = () => {
     <>
       {/* ── Mobile nav bar ── */}
       <div
-        className={`fixed inset-x-0 top-0 z-[1000] flex items-center gap-3 px-4 py-3 lg:hidden transition-all duration-300 bg-background/40 backdrop-blur-sm ${
-          stickyMenu ? "border-b border-border/50 shadow-sm" : ""
+        className={`fixed inset-x-0 top-0 z-[1000] flex items-center gap-3 px-4 py-3 lg:hidden transition-all duration-300 ${
+          stickyMenu
+            ? "bg-background/60 backdrop-blur-sm border-b border-border/50 shadow-sm"
+            : "bg-background/20"
         }`}
       >
         {/* Logo */}

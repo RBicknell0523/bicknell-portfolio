@@ -51,7 +51,7 @@ const Contact = () => {
 
           {/* Left: intro + links */}
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-            <div className="mb-4 h-12 w-full">
+            <div className="mb-4 h-12 w-full overflow-hidden">
               <MobileTextCycler
                 texts={["Get In Touch", "Let's Talk", "Say Hello", "Work With Me"]}
                 className="md:hidden flex items-center justify-center lg:justify-start h-full text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent"

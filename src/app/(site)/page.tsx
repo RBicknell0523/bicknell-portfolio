@@ -1,7 +1,9 @@
-import About from "@/components/Portfolio/About";
-import Contact from "@/components/Portfolio/Contact";
-import Projects from "@/components/Portfolio/Projects";
+import dynamic from "next/dynamic";
 import AnimatedShaderHero from "@/components/ui/animated-shader-hero";
+
+const About    = dynamic(() => import("@/components/Portfolio/About"));
+const Projects = dynamic(() => import("@/components/Portfolio/Projects"));
+const Contact  = dynamic(() => import("@/components/Portfolio/Contact"));
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

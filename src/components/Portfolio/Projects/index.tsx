@@ -61,7 +61,7 @@ const Projects = () => {
         className="flex flex-col pt-20 pb-12 lg:sticky lg:top-0 lg:min-h-screen lg:justify-center lg:pt-0 lg:pb-0"
       >
         <div className="mx-auto w-full max-w-[1170px] px-4 sm:px-8 xl:px-0">
-          <div className="mb-2 h-12 lg:mb-3">
+          <div className="mb-2 h-12 lg:mb-3 overflow-hidden">
             <MobileTextCycler
               texts={["Projects", "My Work", "What I Build"]}
               className="md:hidden flex items-center justify-center lg:justify-start h-full text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent"
