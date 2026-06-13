@@ -147,7 +147,7 @@ const About = () => {
                 />
               </div>
             </div>
-            <div className='glass-card mx-auto mb-6 max-w-[600px] px-4 py-3 lg:mx-0'>
+            <div className='glass-card mx-auto mb-6 px-5 py-4 lg:mx-0'>
               <p className='text-foreground/75 leading-relaxed'>
                 I'm a certified full stack web developer and seven-year U.S.
                 Army veteran. My military career built disciplined execution,
