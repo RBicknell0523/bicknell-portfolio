@@ -8,6 +8,7 @@ import Image from "next/image";
 import { ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { GooeyText } from "@/components/ui/gooey-text-morphing";
+import { MobileTextCycler } from "@/components/ui/mobile-text-cycler";
 import { projects } from "./projectsData";
 
 const DESKTOP_BREAKPOINT = 1024;
@@ -61,9 +62,10 @@ const Projects = () => {
       >
         <div className="mx-auto w-full max-w-[1170px] px-4 sm:px-8 xl:px-0">
           <div className="mb-2 h-12 lg:mb-3">
-            <span className="md:hidden flex items-center justify-center lg:justify-start h-full text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent">
-              Projects
-            </span>
+            <MobileTextCycler
+              texts={["Projects", "My Work", "What I Build"]}
+              className="md:hidden flex items-center justify-center lg:justify-start h-full text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent"
+            />
             <div className="hidden md:block h-full">
               <GooeyText
                 texts={["Projects", "My Work", "What I Build"]}

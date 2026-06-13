@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { GooeyText } from "@/components/ui/gooey-text-morphing";
+import { MobileTextCycler } from "@/components/ui/mobile-text-cycler";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -51,9 +52,10 @@ const Contact = () => {
           {/* Left: intro + links */}
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
             <div className="mb-4 h-12 w-full">
-              <span className="md:hidden flex items-center justify-center lg:justify-start h-full text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent">
-                Get In Touch
-              </span>
+              <MobileTextCycler
+                texts={["Get In Touch", "Let's Talk", "Say Hello", "Work With Me"]}
+                className="md:hidden flex items-center justify-center lg:justify-start h-full text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent"
+              />
               <div className="hidden md:block h-full">
                 <GooeyText
                   texts={["Get In Touch", "Let's Talk", "Say Hello", "Work With Me"]}

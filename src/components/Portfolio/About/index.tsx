@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { GraduationCap, Shield, CheckCircle2, Clock } from 'lucide-react';
 import { GooeyText } from '@/components/ui/gooey-text-morphing';
+import { MobileTextCycler } from '@/components/ui/mobile-text-cycler';
 import { BentoGrid, type BentoItem } from '@/components/ui/bento-grid';
 
 type Tab = 'stack' | 'certs';
@@ -131,10 +132,10 @@ const About = () => {
           {/* Right: bio + toggled content */}
           <div className='text-center lg:text-left'>
             <div className='mb-4 h-12'>
-              {/* Mobile: static text — GooeyText SVG filters block the main thread on mobile */}
-              <span className='md:hidden flex items-center justify-center lg:justify-start h-full text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent'>
-                About Me
-              </span>
+              <MobileTextCycler
+                texts={['About Me', 'My Story', 'Who I Am']}
+                className='md:hidden flex items-center justify-center lg:justify-start h-full text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent'
+              />
               <div className='hidden md:block h-full'>
                 <GooeyText
                   texts={['About Me', 'My Story', 'Who I Am']}

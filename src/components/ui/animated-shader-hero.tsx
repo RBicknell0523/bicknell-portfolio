@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef, useEffect } from "react";
 import { GooeyText } from "@/components/ui/gooey-text-morphing";
+import { MobileTextCycler } from "@/components/ui/mobile-text-cycler";
 
 interface HeroProps {
   greeting?: string;
@@ -323,10 +324,10 @@ const AnimatedShaderHero: React.FC<HeroProps> = ({
         className="hidden md:block fixed inset-0 w-full h-full touch-none"
         style={{ zIndex: -1 }}
       />
-      {/* Mobile: static gradient background */}
+      {/* Mobile: animated gradient background */}
       <div
-        className="md:hidden fixed inset-0"
-        style={{ zIndex: -1, background: "linear-gradient(-45deg, #090909, #1a0800, #000d1a, #0d0018)" }}
+        className="md:hidden fixed inset-0 animate-gradient-bg"
+        style={{ zIndex: -1, background: "linear-gradient(-45deg, #090909, #1a0800, #000d1a, #0d0018, #150a00)" }}
       />
 
       {/* Radial dark overlay to keep text readable regardless of animation position */}
@@ -363,10 +364,10 @@ const AnimatedShaderHero: React.FC<HeroProps> = ({
             </h1>
             {headline.line2Texts ? (
               <div className="h-10 sm:h-14 md:h-20 lg:h-24 animate-fade-in-up animation-delay-400">
-                {/* Mobile: static text — GooeyText SVG filters block the main thread on mobile */}
-                <span className="md:hidden flex items-center justify-center h-full text-2xl sm:text-4xl font-bold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
-                  {headline.line2Texts[0]}
-                </span>
+                <MobileTextCycler
+                  texts={headline.line2Texts}
+                  className="md:hidden flex items-center justify-center h-full text-2xl sm:text-4xl font-bold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]"
+                />
                 <div className="hidden md:block h-full">
                   <GooeyText
                     texts={headline.line2Texts}
