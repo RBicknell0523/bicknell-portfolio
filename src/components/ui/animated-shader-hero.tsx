@@ -315,8 +315,11 @@ function useShaderBackground() {
 
     const resize = () => {
       const vv = window.visualViewport;
-      canvas.width = (vv ? vv.width : window.innerWidth) * dpr;
-      canvas.height = (vv ? vv.height : window.innerHeight) * dpr;
+      const w = Math.round((vv ? vv.width : window.innerWidth) * dpr);
+      const h = Math.round((vv ? vv.height : window.innerHeight) * dpr);
+      if (canvas.width === w && canvas.height === h) return;
+      canvas.width = w;
+      canvas.height = h;
       rendererRef.current?.updateScale(dpr);
     };
 
