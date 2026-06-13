@@ -364,14 +364,20 @@ const AnimatedShaderHero: React.FC<HeroProps> = ({
             </h1>
             {headline.line2Texts ? (
               <div className="h-10 sm:h-14 md:h-20 lg:h-24 animate-fade-in-up animation-delay-400">
-                <GooeyText
-                  texts={headline.line2Texts}
-                  morphTime={1}
-                  cooldownTime={2.5}
-                  centered
-                  className="h-full drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]"
-                  textClassName="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent"
-                />
+                {/* Mobile: static text — GooeyText SVG filters block the main thread on mobile */}
+                <span className="md:hidden flex items-center justify-center h-full text-2xl sm:text-4xl font-bold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
+                  {headline.line2Texts[0]}
+                </span>
+                <div className="hidden md:block h-full">
+                  <GooeyText
+                    texts={headline.line2Texts}
+                    morphTime={1}
+                    cooldownTime={2.5}
+                    centered
+                    className="h-full drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]"
+                    textClassName="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent"
+                  />
+                </div>
               </div>
             ) : (
               <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-yellow-300 via-orange-400 to-red-400 bg-clip-text text-transparent animate-fade-in-up animation-delay-400 drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">

@@ -131,14 +131,20 @@ const About = () => {
           {/* Right: bio + toggled content */}
           <div className='text-center lg:text-left'>
             <div className='mb-4 h-12'>
-              <GooeyText
-                texts={['About Me', 'My Story', 'Who I Am']}
-                morphTime={1}
-                cooldownTime={2.5}
-                innerClassName='justify-center lg:justify-start'
-                className='h-full'
-                textClassName='text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent'
-              />
+              {/* Mobile: static text — GooeyText SVG filters block the main thread on mobile */}
+              <span className='md:hidden flex items-center justify-center lg:justify-start h-full text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent'>
+                About Me
+              </span>
+              <div className='hidden md:block h-full'>
+                <GooeyText
+                  texts={['About Me', 'My Story', 'Who I Am']}
+                  morphTime={1}
+                  cooldownTime={2.5}
+                  innerClassName='justify-center lg:justify-start'
+                  className='h-full'
+                  textClassName='text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent'
+                />
+              </div>
             </div>
             <div className='glass-card mx-auto mb-6 max-w-[600px] px-4 py-3 lg:mx-0'>
               <p className='text-foreground/75 leading-relaxed'>
