@@ -20,6 +20,9 @@ const skills = [
   'Tailwind CSS',
   'Redux',
   'MySQL',
+  'Database Design',
+  'Data Security & Privacy',
+  'MongoDB',
   'Git',
   'GitHub',
   'Responsive Web Design',
@@ -37,7 +40,8 @@ const certifications = [
   { name: 'HTML/CSS Web Developer', status: 'earned' },
   { name: 'JavaScript Professional', status: 'earned' },
   { name: 'ReactJS Professional Developer', status: 'earned' },
-  { name: 'MySQL', status: 'pending' },
+  { name: 'MySQL', status: 'earned' },
+  { name: 'Python', status: 'pending' },
 ];
 
 const expEduItems: BentoItem[] = [
@@ -61,7 +65,7 @@ const expEduItems: BentoItem[] = [
     title: 'ERA Academy',
     meta: 'Feb 2026 – Jul 2026',
     description:
-      "Full-stack web development training covering front-end, back-end, database design, API integration, and responsive applications. Completed projects, assignments and tests demonstrating proficiency in HTML/CSS, JavaScript, React, Node.js, MySQL, and modern development tools. Tested through the Coalition of Information Technology (COITB) certification exams.",
+      'Full-stack web development academy covering front-end, back-end, database design, API integration, and responsive applications. Completed projects, assignments and tests demonstrating proficiency in HTML/CSS, JavaScript, React, Node.js, MySQL, Python and numerous modern development tools. Tested through the Coalition of Information Technology (COITB) certification exams.',
     icon: <GraduationCap className='text-primary h-4 w-4' />,
     status: 'In Progress',
     tags: ['Front-End', 'Back-End', 'Databases'],
@@ -144,10 +148,10 @@ const About = () => {
                 leading teams and leading high-stakes responsibilities. Now I
                 apply that same mission-focus to web development — trained in
                 front-end and back-end through ERA Academy, I build reliable,
-                accessible, and scalable applications. I'm passionate about my
-                work, and I aim to leverage my background with technology to
-                create impactful digital experiences and continue growing as a
-                developer.
+                responsive, and scalable applications. I'm passionate about my
+                work, and I aim to leverage that passion with my military
+                background and my web development skills to create impactful
+                digital experiences and continue growing as a developer.
               </p>
             </div>
 
