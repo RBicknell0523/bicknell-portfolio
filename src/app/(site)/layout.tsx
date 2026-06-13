@@ -1,6 +1,4 @@
-import '@/styles/animate.css';
 import '@/styles/prism-vsc-dark-plus.css';
-import '@/styles/star.css';
 import '@/styles/tailwind.css';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -25,6 +23,13 @@ export default function RootLayout({
     <html lang='en' className={`${plusJakarta.className} ${dmSans.variable} ${ibmMono.variable} dark`}>
       <body>
         <div className='isolate'>
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:z-[9999] focus:top-4 focus:left-4 focus:px-4 focus:py-2 focus:rounded-md focus:bg-primary focus:text-primary-foreground focus:font-medium focus:shadow-lg"
+          >
+            Skip to main content
+          </a>
+
           <NextTopLoader
             color='#c4967a'
             crawlSpeed={300}
@@ -33,7 +38,9 @@ export default function RootLayout({
           />
 
           <Header />
-          {children}
+          <main id="main-content">
+            {children}
+          </main>
           <Footer />
         </div>
 

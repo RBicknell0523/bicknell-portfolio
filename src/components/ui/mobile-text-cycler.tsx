@@ -33,7 +33,7 @@ export function MobileTextCycler({ texts, interval = 3500, className = "" }: Mob
   }, [texts, interval]);
 
   return (
-    <span className={`${className} relative`}>
+    <span className={`${className} relative`} role="status" aria-live="polite" aria-atomic="true">
       {([0, 1] as const).map((slot) => (
         <span
           key={slot}
