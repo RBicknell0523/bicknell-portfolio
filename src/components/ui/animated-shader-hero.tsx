@@ -323,12 +323,11 @@ const AnimatedShaderHero: React.FC<HeroProps> = ({
         className="hidden md:block fixed inset-0 w-full h-full touch-none"
         style={{ zIndex: -1 }}
       />
-      {/* Mobile: CSS animated gradient (compositor-thread, no WebGL overhead) */}
+      {/* Mobile: static gradient background */}
       <div
         className="md:hidden fixed inset-0"
-        style={{ zIndex: -1, background: "linear-gradient(-45deg, #090909, #1a0800, #000d1a, #0d0018)", backgroundSize: "400% 400%", animation: "mobileHeroBg 20s ease infinite" }}
+        style={{ zIndex: -1, background: "linear-gradient(-45deg, #090909, #1a0800, #000d1a, #0d0018)" }}
       />
-      <style>{`@keyframes mobileHeroBg { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }`}</style>
 
       {/* Radial dark overlay to keep text readable regardless of animation position */}
       <div
