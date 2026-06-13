@@ -153,8 +153,9 @@ const Projects = () => {
                           className="object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                       ) : (
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <span className="text-xs text-muted-foreground/40">Screenshot coming soon</span>
+                        <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
+                          <span className="text-5xl font-black text-primary/20 select-none">{"</>"}</span>
+                          <span className="text-[10px] tracking-widest uppercase text-muted-foreground/30">Preview coming soon</span>
                         </div>
                       )}
                     </div>

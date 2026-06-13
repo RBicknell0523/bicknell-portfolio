@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
-import { GraduationCap, Shield, CheckCircle2, Clock } from 'lucide-react';
+import { GraduationCap, Shield, CheckCircle2, Clock, Download } from 'lucide-react';
 import { GooeyText } from '@/components/ui/gooey-text-morphing';
 import { MobileTextCycler } from '@/components/ui/mobile-text-cycler';
 import { BentoGrid, type BentoItem } from '@/components/ui/bento-grid';
@@ -127,6 +127,15 @@ const About = () => {
                 </svg>
               </a>
             </div>
+
+            <a
+              href='/resume.pdf'
+              download='Robert_Bicknell_Resume.pdf'
+              className='inline-flex items-center gap-2 rounded-md border border-primary/50 px-4 py-2 text-sm font-semibold text-primary transition-all hover:bg-primary/10 hover:border-primary'
+            >
+              <Download className='h-4 w-4' />
+              Download Resume
+            </a>
           </div>
 
           {/* Right: bio + toggled content */}

@@ -826,10 +826,6 @@ pre {
   @apply relative px-4 py-2 rounded-lg mb-2;
 }
 
-.prism-copy-button {
-  @apply absolute top-2 right-2 h-[26px] rounded-sm bg-white px-4;
-}
-
 /* ai examples */
 .aiExamples-border-gredient:before {
   @apply gradient-border;

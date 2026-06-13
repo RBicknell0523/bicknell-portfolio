@@ -1,4 +1,3 @@
-import '@/styles/prism-vsc-dark-plus.css';
 import '@/styles/tailwind.css';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -8,7 +7,6 @@ import Header from '@/components/Header';
 import ScrollReveal from '@/components/ScrollReveal';
 import ScrollToTop from '@/components/ScrollToTop';
 import { Plus_Jakarta_Sans, DM_Sans, IBM_Plex_Mono } from 'next/font/google';
-import NextTopLoader from 'nextjs-toploader';
 
 const plusJakarta = Plus_Jakarta_Sans({ subsets: ['latin'], display: 'swap' });
 const dmSans      = DM_Sans({ subsets: ['latin'], display: 'swap', variable: '--font-sans' });
@@ -29,13 +27,6 @@ export default function RootLayout({
           >
             Skip to main content
           </a>
-
-          <NextTopLoader
-            color='#c4967a'
-            crawlSpeed={300}
-            showSpinner={false}
-            shadow='none'
-          />
 
           <Header />
           <main id="main-content">
