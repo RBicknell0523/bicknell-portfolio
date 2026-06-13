@@ -314,7 +314,7 @@ function useShaderBackground() {
     const dpr = isMobile
       ? Math.min(0.75, 0.5 * window.devicePixelRatio)
       : Math.max(1, 0.5 * window.devicePixelRatio);
-    const fpsInterval = isMobile ? 1000 / 30 : 0;
+    const fpsInterval = isMobile ? 1000 / 30 : 1000 / 60;
 
     const resize = () => {
       canvas.width = window.innerWidth * dpr;
